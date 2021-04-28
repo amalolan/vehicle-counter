@@ -23,6 +23,23 @@ from deep_sort import preprocessing, nn_matching
 from deep_sort.detection import Detection
 from deep_sort.tracker import Tracker
 from tools import generate_detections as gdet
+from scipy.spatial import Delaunay
+import os
+
+import cv2
+import json
+
+import numpy as np
+import imageio
+from math import ceil
+import pandas as pd
+import matplotlib.pyplot as plt
+import matplotlib.patches as patches
+from mpl_toolkits.axes_grid1 import make_axes_locatable
+from scipy.spatial import ConvexHull, convex_hull_plot_2d
+
+from collections import Counter
+
 flags.DEFINE_string('framework', 'tf', '(tf, tflite, trt')
 flags.DEFINE_string('weights', './checkpoints/yolov4-416',
                     'path to weights file')
@@ -37,20 +54,25 @@ flags.DEFINE_float('score', 0.50, 'score threshold')
 flags.DEFINE_boolean('dont_show', False, 'dont show video output')
 flags.DEFINE_boolean('info', False, 'show detailed info of tracked objects')
 flags.DEFINE_boolean('count', False, 'count objects being tracked on screen')
+flags.DEFINE_string('roi_file', None, 'ROI file for YOLO detections')
+flags.DEFINE_string('tracks_output', None, 'path to output track information from video')
+flags.DEFINE_float('max_iou_distance', 0.9, 'max iou distance')
+flags.DEFINE_integer('max_age', 60, 'max age')
+flags.DEFINE_integer('n_init', 6, 'max age')
 
 def main(_argv):
     # Definition of the parameters
     max_cosine_distance = 0.4
     nn_budget = None
     nms_max_overlap = 1.0
-    
+
     # initialize deep sort
     model_filename = 'model_data/mars-small128.pb'
     encoder = gdet.create_box_encoder(model_filename, batch_size=1)
     # calculate cosine distance metric
     metric = nn_matching.NearestNeighborDistanceMetric("cosine", max_cosine_distance, nn_budget)
     # initialize tracker
-    tracker = Tracker(metric)
+    tracker = Tracker(metric, max_iou_distance=FLAGS.max_iou_distance, max_age=FLAGS.max_age, n_init=FLAGS.n_init)
 
     # load configuration for object detector
     config = ConfigProto()
@@ -80,6 +102,14 @@ def main(_argv):
         vid = cv2.VideoCapture(video_path)
 
     out = None
+
+    if FLAGS.tracks_output:
+        tracks_file = open(FLAGS.tracks_output, 'w+')
+        tracks_file.write("track,frame,x,y,class,width,height\n")
+
+    if FLAGS.roi_file:
+        roi = np.genfromtxt(FLAGS.roi_file, delimiter=',')
+        hull = Delaunay(roi)
 
     # get video ready to save locally if flag is set
     if FLAGS.output:
@@ -157,10 +187,10 @@ def main(_argv):
         class_names = utils.read_class_names(cfg.YOLO.CLASSES)
 
         # by default allow all classes in .names file
-        allowed_classes = list(class_names.values())
-        
+        # allowed_classes = list(class_names.values())
+
         # custom allowed classes (uncomment line below to customize tracker for only people)
-        #allowed_classes = ['person']
+        allowed_classes = ['car', 'truck']
 
         # loop through objects and use class index to get class name, allow only classes in allowed_classes list
         names = []
@@ -170,16 +200,37 @@ def main(_argv):
             class_name = class_names[class_indx]
             if class_name not in allowed_classes:
                 deleted_indx.append(i)
-            else:
-                names.append(class_name)
+            names.append('car')
+
         names = np.array(names)
         count = len(names)
         if FLAGS.count:
             cv2.putText(frame, "Objects being tracked: {}".format(count), (5, 35), cv2.FONT_HERSHEY_COMPLEX_SMALL, 2, (0, 255, 0), 2)
             print("Objects being tracked: {}".format(count))
+
         # delete detections that are not in allowed_classes
         bboxes = np.delete(bboxes, deleted_indx, axis=0)
         scores = np.delete(scores, deleted_indx, axis=0)
+        names = np.delete(names, deleted_indx, axis=0)
+
+        deleted_indx = []
+
+        # ROI determination
+        if FLAGS.roi_file:
+            for i in range(len(bboxes)):
+                bbox = bboxes[i]
+                center = np.array((int(bbox[0]) + int(bbox[2])//2,
+                                   int(bbox[1]) + int(bbox[3])//2))
+                # not in hull
+                # https://stackoverflow.com/questions/16750618/whats-an-efficient-way-to-find-if-a-point-lies-in-the-convex-hull-of-a-point-cl/16906278
+                if hull.find_simplex(center) < 0:
+                    print(center)
+                    deleted_indx.append(i)
+
+            # also delete detections outside bbox
+            bboxes = np.delete(bboxes, deleted_indx, axis=0)
+            scores = np.delete(scores, deleted_indx, axis=0)
+            names = np.delete(names, deleted_indx, axis=0)
 
         # encode yolo detections and feed to tracker
         features = encoder(frame, bboxes)
@@ -194,7 +245,7 @@ def main(_argv):
         scores = np.array([d.confidence for d in detections])
         classes = np.array([d.class_name for d in detections])
         indices = preprocessing.non_max_suppression(boxs, classes, nms_max_overlap, scores)
-        detections = [detections[i] for i in indices]       
+        detections = [detections[i] for i in indices]
 
         # Call the tracker
         tracker.predict()
@@ -203,35 +254,50 @@ def main(_argv):
         # update tracks
         for track in tracker.tracks:
             if not track.is_confirmed() or track.time_since_update > 1:
-                continue 
+                continue
             bbox = track.to_tlbr()
             class_name = track.get_class()
-            
-        # draw bbox on screen
+
+            # draw bbox on screen
             color = colors[int(track.track_id) % len(colors)]
             color = [i * 255 for i in color]
             cv2.rectangle(frame, (int(bbox[0]), int(bbox[1])), (int(bbox[2]), int(bbox[3])), color, 2)
             cv2.rectangle(frame, (int(bbox[0]), int(bbox[1]-30)), (int(bbox[0])+(len(class_name)+len(str(track.track_id)))*17, int(bbox[1])), color, -1)
             cv2.putText(frame, class_name + "-" + str(track.track_id),(int(bbox[0]), int(bbox[1]-10)),0, 0.75, (255,255,255),2)
 
-        # if enable info flag then print details about each track
+            # if enable info flag then print details about each track
             if FLAGS.info:
                 print("Tracker ID: {}, Class: {},  BBox Coords (xmin, ymin, xmax, ymax): {}".format(str(track.track_id), class_name, (int(bbox[0]), int(bbox[1]), int(bbox[2]), int(bbox[3]))))
+            if FLAGS.tracks_output:
+                center = ((int(bbox[0]) + int(bbox[2]))//2,
+                          (int(bbox[1]) + int(bbox[3]))//2)
+                width = int(bbox[2] - bbox[0])
+                height = int(bbox[3] - bbox[1])
+                tracks_file.write(str(track.track_id) + "," + str(frame_num) +","
+                                  + str(center[0]) + "," + str(center[1]) + "," + str(class_name) +
+                                  "," + str(width) + "," + str(height) + "\n")
+
+
 
         # calculate frames per second of running detections
         fps = 1.0 / (time.time() - start_time)
         print("FPS: %.2f" % fps)
         result = np.asarray(frame)
         result = cv2.cvtColor(frame, cv2.COLOR_RGB2BGR)
-        
+
         if not FLAGS.dont_show:
             cv2.imshow("Output Video", result)
-        
+
         # if output flag is set, save video file
         if FLAGS.output:
             out.write(result)
+
         if cv2.waitKey(1) & 0xFF == ord('q'): break
+
+
     cv2.destroyAllWindows()
+    if FLAGS.tracks_output:
+        tracks_file.close()
 
 if __name__ == '__main__':
     try:
