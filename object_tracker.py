@@ -1,8 +1,10 @@
 import os
+
 # comment out below line to enable tensorflow logging outputs
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 import time
 import tensorflow as tf
+
 physical_devices = tf.config.experimental.list_physical_devices('GPU')
 if len(physical_devices) > 0:
     tf.config.experimental.set_memory_growth(physical_devices[0], True)
@@ -60,7 +62,23 @@ flags.DEFINE_float('max_iou_distance', 0.9, 'max iou distance')
 flags.DEFINE_integer('max_age', 60, 'max age')
 flags.DEFINE_integer('n_init', 6, 'max age')
 
+
+def counter_helper(_argv):
+    app.run(main, _argv)
+
+
 def main(_argv):
+    if len(_argv) > 0:
+        FLAGS.video = _argv[0]
+        FLAGS.output = _argv[1]
+        FLAGS.score = float(_argv[2])
+        FLAGS.tracks_output = _argv[3]
+        FLAGS.roi_file = _argv[4]
+        FLAGS.max_iou_distance = float(_argv[5])
+        FLAGS.max_age = int(_argv[6])
+        FLAGS.n_init = int(_argv[7])
+        if len(_argv) == 9:
+            FLAGS.dont_show = True
     # Definition of the parameters
     max_cosine_distance = 0.4
     nn_budget = None
@@ -130,7 +148,7 @@ def main(_argv):
         else:
             print('Video has ended or failed, try a different video format!')
             break
-        frame_num +=1
+        frame_num += 1
         print('Frame #: ', frame_num)
         frame_size = frame.shape[:2]
         image_data = cv2.resize(frame, (input_size, input_size))
@@ -205,7 +223,8 @@ def main(_argv):
         names = np.array(names)
         count = len(names)
         if FLAGS.count:
-            cv2.putText(frame, "Objects being tracked: {}".format(count), (5, 35), cv2.FONT_HERSHEY_COMPLEX_SMALL, 2, (0, 255, 0), 2)
+            cv2.putText(frame, "Objects being tracked: {}".format(count), (5, 35), cv2.FONT_HERSHEY_COMPLEX_SMALL, 2,
+                        (0, 255, 0), 2)
             print("Objects being tracked: {}".format(count))
 
         # delete detections that are not in allowed_classes
@@ -219,8 +238,8 @@ def main(_argv):
         if FLAGS.roi_file:
             for i in range(len(bboxes)):
                 bbox = bboxes[i]
-                center = np.array((int(bbox[0]) + int(bbox[2])//2,
-                                   int(bbox[1]) + int(bbox[3])//2))
+                center = np.array((int(bbox[0]) + int(bbox[2]) // 2,
+                                   int(bbox[1]) + int(bbox[3]) // 2))
                 # not in hull
                 # https://stackoverflow.com/questions/16750618/whats-an-efficient-way-to-find-if-a-point-lies-in-the-convex-hull-of-a-point-cl/16906278
                 if hull.find_simplex(center) < 0:
@@ -234,9 +253,10 @@ def main(_argv):
 
         # encode yolo detections and feed to tracker
         features = encoder(frame, bboxes)
-        detections = [Detection(bbox, score, class_name, feature) for bbox, score, class_name, feature in zip(bboxes, scores, names, features)]
+        detections = [Detection(bbox, score, class_name, feature) for bbox, score, class_name, feature in
+                      zip(bboxes, scores, names, features)]
 
-        #initialize color map
+        # initialize color map
         cmap = plt.get_cmap('tab20b')
         colors = [cmap(i)[:3] for i in np.linspace(0, 1, 20)]
 
@@ -262,22 +282,27 @@ def main(_argv):
             color = colors[int(track.track_id) % len(colors)]
             color = [i * 255 for i in color]
             cv2.rectangle(frame, (int(bbox[0]), int(bbox[1])), (int(bbox[2]), int(bbox[3])), color, 2)
-            cv2.rectangle(frame, (int(bbox[0]), int(bbox[1]-30)), (int(bbox[0])+(len(class_name)+len(str(track.track_id)))*17, int(bbox[1])), color, -1)
-            cv2.putText(frame, class_name + "-" + str(track.track_id),(int(bbox[0]), int(bbox[1]-10)),0, 0.75, (255,255,255),2)
+            cv2.rectangle(frame, (int(bbox[0]), int(bbox[1] - 30)),
+                          (int(bbox[0]) + (len(class_name) + len(str(track.track_id))) * 17, int(bbox[1])), color, -1)
+            cv2.putText(frame, class_name + "-" + str(track.track_id), (int(bbox[0]), int(bbox[1] - 10)), 0, 0.75,
+                        (255, 255, 255), 2)
 
             # if enable info flag then print details about each track
             if FLAGS.info:
-                print("Tracker ID: {}, Class: {},  BBox Coords (xmin, ymin, xmax, ymax): {}".format(str(track.track_id), class_name, (int(bbox[0]), int(bbox[1]), int(bbox[2]), int(bbox[3]))))
+                print("Tracker ID: {}, Class: {},  BBox Coords (xmin, ymin, xmax, ymax): {}".format(str(track.track_id),
+                                                                                                    class_name, (
+                                                                                                    int(bbox[0]),
+                                                                                                    int(bbox[1]),
+                                                                                                    int(bbox[2]),
+                                                                                                    int(bbox[3]))))
             if FLAGS.tracks_output:
-                center = ((int(bbox[0]) + int(bbox[2]))//2,
-                          (int(bbox[1]) + int(bbox[3]))//2)
+                center = ((int(bbox[0]) + int(bbox[2])) // 2,
+                          (int(bbox[1]) + int(bbox[3])) // 2)
                 width = int(bbox[2] - bbox[0])
                 height = int(bbox[3] - bbox[1])
-                tracks_file.write(str(track.track_id) + "," + str(frame_num) +","
+                tracks_file.write(str(track.track_id) + "," + str(frame_num) + ","
                                   + str(center[0]) + "," + str(center[1]) + "," + str(class_name) +
                                   "," + str(width) + "," + str(height) + "\n")
-
-
 
         # calculate frames per second of running detections
         fps = 1.0 / (time.time() - start_time)
@@ -294,10 +319,10 @@ def main(_argv):
 
         if cv2.waitKey(1) & 0xFF == ord('q'): break
 
-
     cv2.destroyAllWindows()
     if FLAGS.tracks_output:
         tracks_file.close()
+
 
 if __name__ == '__main__':
     try:
