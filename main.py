@@ -101,27 +101,25 @@ def counter_main():
                 start = time.time()
                 try:
                     tracks = read_tracks(cam_num, track_file, row[0])
-                except FileNotFoundError:
-                    with open('../final_log.json', 'w+') as fp:
-                        json.dump(final_cam_data, fp)
-                    return
-                counter = Counter(tracks, grid_size, row[1])
-                first_n = counter.cluster(*(row[2:]), min_n, max_n)
-                counter.post_process()
-                second_n = counter.cluster(*(row[2:]), min_n, max_n, plot_path=plot_path)
-                if second_n != first_n:
-                    tracks = read_tracks(cam_num, track_file, row[0])
                     counter = Counter(tracks, grid_size, row[1])
-                    counter.cluster(*(row[2:]), fixed_n=second_n)
+                    first_n = counter.cluster(*(row[2:]), min_n, max_n)
                     counter.post_process()
-                    counter.cluster(*(row[2:]), fixed_n=second_n, plot_path=plot_path)
-                end = time.time()
-                print("fps: ", (n_frames / (end - start)))
-                cam_dict["clustering_fps"] = n_frames / (end - start)
-                cam_dict["track_hyperparam_index"] = i
-                cam_dict["cluster_hyperparam_index"] = index
-                cam_dict["plot_path"] = plot_path
-                final_cam_data.append(cam_dict.copy())
+                    second_n = counter.cluster(*(row[2:]), min_n, max_n, plot_path=plot_path)
+                    if second_n != first_n:
+                        tracks = read_tracks(cam_num, track_file, row[0])
+                        counter = Counter(tracks, grid_size, row[1])
+                        counter.cluster(*(row[2:]), fixed_n=second_n)
+                        counter.post_process()
+                        counter.cluster(*(row[2:]), fixed_n=second_n, plot_path=plot_path)
+                    end = time.time()
+                    print("fps: ", (n_frames / (end - start)))
+                    cam_dict["clustering_fps"] = n_frames / (end - start)
+                    cam_dict["track_hyperparam_index"] = i
+                    cam_dict["cluster_hyperparam_index"] = index
+                    cam_dict["plot_path"] = plot_path
+                    final_cam_data.append(cam_dict.copy())
+                except FileNotFoundError:
+                    print("File error!")
         break  # TODO: REMOVE if running for all tracks
 
     with open('../final_log.json', 'w+') as fp:
@@ -130,7 +128,7 @@ def counter_main():
 
 if __name__ == '__main__':
     # roi_main()
-    # tracking_main()
+    tracking_main()
     counter_main()
 
 # python object_tracker.py --video ../data/cam_1.mp4 --output ../data/tracked_1_new.avi --model yolov4 --score 0.5
