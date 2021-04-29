@@ -212,7 +212,6 @@ def main(_argv):
     cv2.destroyAllWindows()
     if FLAGS.tracks_output:
         tracks_file.close()
-    return length
 
 
 if __name__ == '__main__':

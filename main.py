@@ -4,6 +4,7 @@ from roi_object_tracker import run_detector
 from object_tracker import counter_helper
 import json
 import time
+import cv2
 
 
 def read_tracks(cam_num, track_file, h_angle_factor):
@@ -70,23 +71,24 @@ def tracking_main():
             continue
         for index, row in hyperparams.iterrows():
             print(row)
+            start = time.time()
+            video_path = "../videos/cam_" + cam_num + ".mp4"
+            frames = int(cv2.VideoCapture(video_path).get(cv2.CAP_PROP_FRAME_COUNT))
             try:
-                start = time.time()
-                frames = counter_helper(["../videos/cam_" + cam_num + ".mp4",
-                                         "../tracked_videos/tracked_cam_" + cam_num + "_" + str(index) + ".avi",
-                                         str(row[0]),
-                                         "../tracks/tracks_cam_" + cam_num + "_" + str(index) + ".csv",
-                                         "../hull/hull_cam_" + cam_num + ".txt",
-                                         str(row[1]),
-                                         str(int(row[2])),
-                                         str(int(row[3])),
-                                         "../detections/detections_cam_" + cam_num + ".csv",
-                                         "dont_show"])
-                end = time.time()
-                all_fps.append(frames/(end - start))
-                fps_file.write(json.dumps(all_fps))
+                counter_helper([video_path,
+                                "../tracked_videos/tracked_cam_" + cam_num + "_" + str(index) + ".avi",
+                                str(row[0]),
+                                "../tracks/tracks_cam_" + cam_num + "_" + str(index) + ".csv",
+                                "../hull/hull_cam_" + cam_num + ".txt",
+                                str(row[1]),
+                                str(int(row[2])),
+                                str(int(row[3])),
+                                "../detections/detections_cam_" + cam_num + ".csv",
+                                "dont_show"])
             except:
                 print("Video ended or ERROR!!")
+            all_fps.append(frames / (time.time() - start))
+            fps_file.write(json.dumps(all_fps) + "\n")
             break  # TODO: REMOVE if running for all tracks
     fps_file.close()
 
