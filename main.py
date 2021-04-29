@@ -76,7 +76,8 @@ def tracking_main():
                             "../hull/hull_cam_" + cam_num + ".txt",
                             str(row[1]),
                             str(int(row[2])),
-                            str(int(row[3]))])
+                            str(int(row[3])),
+                            "dont_show"])
             break  # TODO: REMOVE if running for all tracks
 
 
