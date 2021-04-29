@@ -95,7 +95,7 @@ def counter_main():
     for i in range(track_hyperparams_len):
         for cam_dict in cam_data:
             cam_num = cam_dict["cam_num"]
-            os.makedirs("../counts/cam_"+cam_num)
+            os.makedirs("../counts/cam_"+cam_num, exist_ok=True)
             track_file = "../tracks/tracks_cam_" + cam_num + "_" + str(i) + ".csv"
             n_frames = int(cam_dict["n_frames"])
             grid_size = int(cam_dict["grid_size"])
@@ -131,10 +131,13 @@ def counter_main():
     with open('../final_log.json', 'w+') as fp:
         json.dump(final_cam_data, fp)
 
+# def test():
+#
+
 
 if __name__ == '__main__':
-    # roi_main()
-    # tracking_main()
+    roi_main()
+    tracking_main()
     counter_main()
 
 # python object_tracker.py --video ../data/cam_1.mp4 --output ../data/tracked_1_new.avi --model yolov4 --score 0.5
