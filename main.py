@@ -77,7 +77,8 @@ def tracking_main():
                                 str(row[1]),
                                 str(int(row[2])),
                                 str(int(row[3])),
-                                "../detections/detections_cam_" + cam_num + ".csv"])
+                                "../detections/detections_cam_" + cam_num + ".csv",
+                                "dont_show"])
             except:
                 print("Video ended or ERROR!!")
             break  # TODO: REMOVE if running for all tracks
