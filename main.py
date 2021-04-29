@@ -69,15 +69,18 @@ def tracking_main():
             continue
         for index, row in hyperparams.iterrows():
             print(row)
-            counter_helper(["../videos/cam_" + cam_num + ".mp4",
-                            "../tracked_videos/tracked_cam_" + cam_num + "_" + str(index) + ".avi",
-                            str(row[0]),
-                            "../tracks/tracks_cam_" + cam_num + "_" + str(index) + ".csv",
-                            "../hull/hull_cam_" + cam_num + ".txt",
-                            str(row[1]),
-                            str(int(row[2])),
-                            str(int(row[3])),
-                            "dont_show"])
+            try:
+                counter_helper(["../videos/cam_" + cam_num + ".mp4",
+                                "../tracked_videos/tracked_cam_" + cam_num + "_" + str(index) + ".avi",
+                                str(row[0]),
+                                "../tracks/tracks_cam_" + cam_num + "_" + str(index) + ".csv",
+                                "../hull/hull_cam_" + cam_num + ".txt",
+                                str(row[1]),
+                                str(int(row[2])),
+                                str(int(row[3])),
+                                "dont_show"])
+            except:
+                print("Video ended or ERROR!!")
             break  # TODO: REMOVE if running for all tracks
 
 
@@ -130,7 +133,7 @@ def counter_main():
 if __name__ == '__main__':
     # roi_main()
     tracking_main()
-    counter_main()
+    # counter_main()
 
 # python object_tracker.py --video ../data/cam_1.mp4 --output ../data/tracked_1_new.avi --model yolov4 --score 0.5
 # --tracks_output ../data/tracks_1_new.csv --roi_file ../data/hull_1.txt --info
