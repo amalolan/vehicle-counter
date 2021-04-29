@@ -125,7 +125,7 @@ def counter_main():
                     final_cam_data.append(cam_dict.copy())
                 except FileNotFoundError:
                     print("File error!")
-            break
+
         break  # TODO: REMOVE if running for all tracks
 
     with open('../final_log.json', 'w+') as fp:
