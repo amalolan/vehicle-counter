@@ -95,14 +95,15 @@ def counter_main():
     for i in range(track_hyperparams_len):
         for cam_dict in cam_data:
             cam_num = cam_dict["cam_num"]
-            os.makedirs("../counts/cam_"+cam_num, exist_ok=True)
+            os.makedirs("../counts/cam_" + cam_num, exist_ok=True)
             track_file = "../tracks/tracks_cam_" + cam_num + "_" + str(i) + ".csv"
             n_frames = int(cam_dict["n_frames"])
             grid_size = int(cam_dict["grid_size"])
 
             for index, row in hyperparams.iterrows():
                 print(row)
-                plot_path = "../counts/cam_"+cam_num+"/counts_cam_" + cam_num + "_" + str(i) + "_" + str(index) + ".png"
+                plot_path = "../counts/cam_" + cam_num + "/counts_cam_" + cam_num + "_" + str(i) + "_" + str(
+                    index) + ".png"
                 start = time.time()
                 try:
                     tracks = read_tracks(cam_num, track_file, row[0])
@@ -131,14 +132,41 @@ def counter_main():
     with open('../final_log.json', 'w+') as fp:
         json.dump(final_cam_data, fp)
 
-# def test():
-#
+
+def test_cam(cam_num="4_dawn", h_angle_factor=100, h_region_factor=5, h_min_cluster_size=3,
+             h_percent_min_lines=0.05, h_min_lines=5, h_min_paths=3):
+    eps = 2
+    cam_num = str(cam_num)
+    track_file = "../tracks/tracks_cam_" + cam_num + "_0.csv"
+    plot_path = "../counts/test_cam_" + cam_num + "_0.png"
+    with open("../log.json", "r") as fp:
+        cam_data = json.load(fp)
+    for cam_dict in cam_data:
+        if cam_dict["cam_num"] == cam_num:
+            grid_size = cam_dict["grid_size"]
+            break
+    tracks = read_tracks(cam_num, track_file, h_angle_factor)
+    counter = Counter(tracks, grid_size, h_region_factor)
+    counter.dbscan_cluster(eps, h_min_cluster_size, h_percent_min_lines, h_min_lines,
+                                     h_min_paths)
+    counter.post_process()
+    counter.dbscan_cluster(eps, h_min_cluster_size, h_percent_min_lines, h_min_lines,
+                               h_min_paths)
+    # if second_n != first_n:
+    #     tracks = read_tracks(cam_num, track_file, h_angle_factor)
+    #     counter = Counter(tracks, grid_size, h_region_factor)
+    #     counter.cluster(h_min_cluster_size, h_percent_min_lines, h_min_lines,
+    #                     h_min_paths, fixed_n=second_n)
+    #     counter.post_process()
+    #     counter.cluster(h_min_cluster_size, h_percent_min_lines, h_min_lines,
+    #                     h_min_paths, fixed_n=second_n, plot_path=plot_path)
 
 
 if __name__ == '__main__':
-    roi_main()
-    tracking_main()
-    counter_main()
+    # roi_main()
+    # tracking_main()
+    # counter_main()
+    test_cam(16)
 
 # python object_tracker.py --video ../data/cam_1.mp4 --output ../data/tracked_1_new.avi --model yolov4 --score 0.5
 # --tracks_output ../data/tracks_1_new.csv --roi_file ../data/hull_1.txt --info

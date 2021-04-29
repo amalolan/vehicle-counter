@@ -1,7 +1,7 @@
 import os
 import imageio
 from math import atan2, sqrt, fabs, inf
-from sklearn.cluster import KMeans
+from sklearn.cluster import KMeans, DBSCAN
 from sklearn.preprocessing import StandardScaler, PolynomialFeatures
 from sklearn.linear_model import LinearRegression, Ridge
 from sklearn.pipeline import Pipeline
@@ -97,6 +97,13 @@ class Tracks:
                 return track
         return None
 
+    def remove_outliers(self):
+        new_tracks_list = []
+        for track in self.tracks_list:
+            if track.cluster != -1:
+                new_tracks_list.append(track)
+        self.tracks_list = new_tracks_list
+
     def remove_small_paths(self):
         new_tracks_list = []
         for track in self.tracks_list:
@@ -137,7 +144,8 @@ class Tracks:
         return std_scaler.fit_transform(cluster_values)
 
     def n_cluster(self, n, X):
-        clusterer = KMeans(n_clusters=n, random_state=10)
+        # clusterer = KMeans(n_clusters=n, random_state=10)
+        clusterer = DBSCAN(eps=n)
         cluster_labels = clusterer.fit_predict(X)
         silhouette_avg = silhouette_score(X, cluster_labels)
         print("n: " + str(n) + " score: " + str(silhouette_avg))
@@ -146,6 +154,8 @@ class Tracks:
     def update_clusters(self, cluster_labels):
         for i in range(len(self.tracks_list)):
             self.tracks_list[i].cluster = cluster_labels[i]
+        self.remove_outliers()
+        return [track.cluster for track in self.tracks_list]
 
     def get_cluster_lengths(self, cluster_labels):
         lengths = [track.get_displacement() for track in self.tracks_list]

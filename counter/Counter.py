@@ -24,13 +24,35 @@ class Counter:
         print(title)
         clusters, counts = np.unique(cluster_labels, return_counts=True)
         [cluster.plot() for cluster in self.clusters]
-        patches = [mpatches.Patch(color="C" + str(clusters[i]), label=str(clusters[i]) + " " + str(counts[i]))
+        patches = [mpatches.Patch(color="C" + str(abs(clusters[i])), label=str(clusters[i]) + " " + str(counts[i]))
                    for i in range(n)]
         plt.legend(handles=patches)
         if plot_path:
             plt.savefig(plot_path)
         else:
             plt.show()
+
+    def dbscan_cluster(self, eps, h_min_cluster_size, h_percent_min_lines,
+                       h_min_lines, h_min_paths, plot_path=None):
+        height, width, _ = self.tracks.image.shape
+        self.tracks.remove_small_paths()
+        X = self.tracks.normalize()
+        cluster_labels, max_silhouette = self.tracks.n_cluster(eps, X)
+        cluster_labels = self.tracks.update_clusters(cluster_labels)
+        self.tracks.plot_quick()
+        self.clusters = []
+        n = len(np.unique(cluster_labels))
+        for i in range(n):
+            cluster_tracks = self.tracks.get_tracks_by_cluster(i)
+            if len(cluster_tracks) < h_min_cluster_size:
+                self.tracks.remove_tracks(cluster_tracks)
+                self.dbscan_cluster(eps, h_min_cluster_size, h_percent_min_lines, h_min_lines, h_min_paths)
+                return
+            self.clusters.append(
+                Cluster(cluster_tracks, i, height, width, self.grid_size, self.h_region_factor,
+                        h_percent_min_lines, h_min_lines, h_min_paths))
+        self.plot(cluster_labels, n, "eps: " + str(eps), plot_path)
+        return
 
     def cluster(self, h_min_cluster_size, h_percent_min_lines, h_min_lines, h_min_paths,
                 min_n=None, max_n=None, fixed_n=None, plot_path=None):
@@ -48,7 +70,7 @@ class Counter:
             best_n = fixed_n
         cluster_labels, max_silhouette = self.tracks.n_cluster(best_n, X)
         self.tracks.update_clusters(cluster_labels)
-        # self.tracks.plot_quick()
+        self.tracks.plot_quick()
         self.clusters = []
         for i in range(best_n):
             cluster_tracks = self.tracks.get_tracks_by_cluster(i)
