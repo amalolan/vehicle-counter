@@ -137,6 +137,7 @@ def main(_argv):
         fps = int(vid.get(cv2.CAP_PROP_FPS))
         codec = cv2.VideoWriter_fourcc(*FLAGS.output_format)
         out = cv2.VideoWriter(FLAGS.output, codec, fps, (width, height))
+        length = int(vid.get(cv2.CAP_PROP_FRAME_COUNT))
 
     frame_num = 0
     # while video is running
@@ -149,7 +150,7 @@ def main(_argv):
             print('Video has ended or failed, try a different video format!')
             break
         frame_num += 1
-        print('Frame #: ', frame_num)
+        print('Frame #: ', frame_num, " / ", length)
         frame_size = frame.shape[:2]
         image_data = cv2.resize(frame, (input_size, input_size))
         image_data = image_data / 255.
