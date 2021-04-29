@@ -59,6 +59,8 @@ def roi_main():
 def tracking_main():
     completed = []
     hyperparams = pd.read_csv("../hyperparams_track.csv", index_col=False)
+    fps_file = open("../fps.txt", "a+")
+    all_fps = []
     print(hyperparams)
     for filename in os.listdir("../videos"):
         cam_name = filename[:-4]
@@ -69,19 +71,24 @@ def tracking_main():
         for index, row in hyperparams.iterrows():
             print(row)
             try:
-                counter_helper(["../videos/cam_" + cam_num + ".mp4",
-                                "../tracked_videos/tracked_cam_" + cam_num + "_" + str(index) + ".avi",
-                                str(row[0]),
-                                "../tracks/tracks_cam_" + cam_num + "_" + str(index) + ".csv",
-                                "../hull/hull_cam_" + cam_num + ".txt",
-                                str(row[1]),
-                                str(int(row[2])),
-                                str(int(row[3])),
-                                "../detections/detections_cam_" + cam_num + ".csv",
-                                "dont_show"])
+                start = time.time()
+                frames = counter_helper(["../videos/cam_" + cam_num + ".mp4",
+                                         "../tracked_videos/tracked_cam_" + cam_num + "_" + str(index) + ".avi",
+                                         str(row[0]),
+                                         "../tracks/tracks_cam_" + cam_num + "_" + str(index) + ".csv",
+                                         "../hull/hull_cam_" + cam_num + ".txt",
+                                         str(row[1]),
+                                         str(int(row[2])),
+                                         str(int(row[3])),
+                                         "../detections/detections_cam_" + cam_num + ".csv",
+                                         "dont_show"])
+                end = time.time()
+                all_fps.append(frames/(end - start))
+                fps_file.write(json.dumps(all_fps))
             except:
                 print("Video ended or ERROR!!")
             break  # TODO: REMOVE if running for all tracks
+    fps_file.close()
 
 
 def counter_main():
@@ -95,14 +102,15 @@ def counter_main():
     for i in range(track_hyperparams_len):
         for cam_dict in cam_data:
             cam_num = cam_dict["cam_num"]
-            os.makedirs("../counts/cam_"+cam_num, exist_ok=True)
+            os.makedirs("../counts/cam_" + cam_num, exist_ok=True)
             track_file = "../tracks/tracks_cam_" + cam_num + "_" + str(i) + ".csv"
             n_frames = int(cam_dict["n_frames"])
             grid_size = int(cam_dict["grid_size"])
 
             for index, row in hyperparams.iterrows():
                 print(row)
-                plot_path = "../counts/cam_"+cam_num+"/counts_cam_" + cam_num + "_" + str(i) + "_" + str(index) + ".png"
+                plot_path = "../counts/cam_" + cam_num + "/counts_cam_" + cam_num + "_" + str(i) + "_" + str(
+                    index) + ".png"
                 start = time.time()
                 try:
                     tracks = read_tracks(cam_num, track_file, row[0])
@@ -130,6 +138,7 @@ def counter_main():
 
     with open('../final_log.json', 'w+') as fp:
         json.dump(final_cam_data, fp)
+
 
 # def test():
 #
