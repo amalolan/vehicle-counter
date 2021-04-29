@@ -37,10 +37,10 @@ def roi_main():
         if cam_name in completed:
             continue
         start = time.time()
-        run_detector("../videos/cam_" + cam_num + ".mp4",
-                     video_output="../detections/detected_cam_" + cam_num + ".avi",
-                     detections_output="../detections/detections_cam_" + cam_num + ".csv",
-                     dont_show=True)
+        # run_detector("../videos/cam_" + cam_num + ".mp4",
+        #              video_output="../detections/detected_cam_" + cam_num + ".avi",
+        #              detections_output="../detections/detections_cam_" + cam_num + ".csv",
+        #              dont_show=True)
         n_frames, box_size, fps, hull_vertices = find_roi(cam_num)
         end = time.time()
         detection_roi_fps = (end - start) / n_frames
@@ -49,8 +49,7 @@ def roi_main():
             "n_frames": n_frames,
             "grid_size": box_size,
             "roi_fps": fps,
-            "detection_roi_fps": detection_roi_fps,
-            "hull_vertices": hull_vertices,
+            "detection_roi_fps": detection_roi_fps
         }
         cam_data.append(cam_obj)
     with open('../log.json', 'w+') as fp:
