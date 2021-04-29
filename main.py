@@ -95,13 +95,14 @@ def counter_main():
     for i in range(track_hyperparams_len):
         for cam_dict in cam_data:
             cam_num = cam_dict["cam_num"]
+            os.makedirs("../counts/cam_"+cam_num)
             track_file = "../tracks/tracks_cam_" + cam_num + "_" + str(i) + ".csv"
             n_frames = int(cam_dict["n_frames"])
             grid_size = int(cam_dict["grid_size"])
 
             for index, row in hyperparams.iterrows():
                 print(row)
-                plot_path = "../counts/cam_" + cam_num + "_" + str(i) + "_" + str(index) + ".png"
+                plot_path = "../counts/cam_"+cam_num+"/counts_cam_" + cam_num + "_" + str(i) + "_" + str(index) + ".png"
                 start = time.time()
                 try:
                     tracks = read_tracks(cam_num, track_file, row[0])
@@ -124,6 +125,7 @@ def counter_main():
                     final_cam_data.append(cam_dict.copy())
                 except FileNotFoundError:
                     print("File error!")
+            break
         break  # TODO: REMOVE if running for all tracks
 
     with open('../final_log.json', 'w+') as fp:
@@ -132,8 +134,8 @@ def counter_main():
 
 if __name__ == '__main__':
     # roi_main()
-    tracking_main()
-    # counter_main()
+    # tracking_main()
+    counter_main()
 
 # python object_tracker.py --video ../data/cam_1.mp4 --output ../data/tracked_1_new.avi --model yolov4 --score 0.5
 # --tracks_output ../data/tracks_1_new.csv --roi_file ../data/hull_1.txt --info
