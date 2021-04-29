@@ -150,7 +150,7 @@ def main(_argv):
             print('Video has ended or failed, try a different video format!')
             break
         frame_num += 1
-        print('Frame #: ', frame_num, " / ", length)
+        print('Frame #: ', frame_num, " / ", length, video_path)
         frame_size = frame.shape[:2]
         image_data = cv2.resize(frame, (input_size, input_size))
         image_data = image_data / 255.
