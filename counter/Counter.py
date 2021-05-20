@@ -48,7 +48,7 @@ class Counter:
             best_n = fixed_n
         cluster_labels, max_silhouette = self.tracks.n_cluster(best_n, X)
         self.tracks.update_clusters(cluster_labels)
-        # self.tracks.plot_quick()
+        self.tracks.plot_quick()
         self.clusters = []
         for i in range(best_n):
             cluster_tracks = self.tracks.get_tracks_by_cluster(i)

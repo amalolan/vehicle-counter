@@ -142,14 +142,33 @@ def counter_main():
         json.dump(final_cam_data, fp)
 
 
-# def test():
-#
+def test_true_k(k_file="../data/true_k.json", angle_factor=100, region_factor=5,
+                min_cluster_size=3, percent_min_lines=0.05,
+                min_lines=5, min_paths=3):
+    with open("../log.json", "r") as fp:
+        cam_data = json.load(fp)
+    with open(k_file, "r") as fp:
+        cam_k = json.load(fp)
+    for cam_dict in cam_data:
+        cam_num = cam_dict["cam_num"]
+        track_file = "../tracks/tracks_cam_" + cam_num + "_0.csv"
+        n_frames = int(cam_dict["n_frames"])
+        grid_size = int(cam_dict["grid_size"])
+        k = cam_k["cam_" + cam_num.split("_")[0]]
+        tracks = read_tracks(cam_num, track_file, angle_factor)
+        counter = Counter(tracks, grid_size, region_factor)
+        first_n = counter.cluster(min_cluster_size, percent_min_lines, min_lines, min_paths,
+                                  fixed_n=k)
+        counter.post_process()
+        second_n = counter.cluster(min_cluster_size, percent_min_lines, min_lines, min_paths,
+                                   fixed_n=k, plot_path="../data/true_k/cam_" + cam_num + ".png")
 
-
+# 100, 5, 3, 0.05, 5, 3
 if __name__ == '__main__':
     # roi_main()
-    tracking_main()
-    counter_main()
+    # tracking_main()
+    # counter_main()
+    test_true_k()
 
 # python object_tracker.py --video ../data/cam_1.mp4 --output ../data/tracked_1_new.avi --model yolov4 --score 0.5
 # --tracks_output ../data/tracks_1_new.csv --roi_file ../data/hull_1.txt --info
