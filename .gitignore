@@ -8,7 +8,7 @@ __pycache__/
 
 # Distribution / packaging
 .Python
-tracked_videos/*
+#outputs/videos/*
 build/
 develop-eggs/
 dist/
