@@ -1,0 +1,52 @@
+[
+  {
+    "num": 0,
+    "score_threshold": 0.5,
+    "max_iou_distance": 0.9,
+    "max_age": 60,
+    "n_init": 6
+  },
+  {
+    "num": 1,
+    "score_threshold": 0.5,
+    "max_iou_distance": 0.9,
+    "max_age": 90,
+    "n_init": 6
+  },
+  {
+    "num": 2,
+    "score_threshold": 0.5,
+    "max_iou_distance": 0.9,
+    "max_age": 30,
+    "n_init": 6
+  },
+  {
+    "num": 3,
+    "score_threshold": 0.5,
+    "max_iou_distance": 0.95,
+    "max_age": 60,
+    "n_init": 6
+  },
+  {
+    "num": 4,
+    "score_threshold": 0.5,
+    "max_iou_distance": 0.8,
+    "max_age": 60,
+    "n_init": 6
+  },
+  {
+    "num": 5,
+    "score_threshold": 0.25,
+    "max_iou_distance": 0.9,
+    "max_age": 60,
+    "n_init": 6
+  },
+  {
+    "num": 6,
+    "score_threshold": 0.75,
+    "max_iou_distance": 0.9,
+    "max_age": 60,
+    "n_init": 6
+  }
+]
+

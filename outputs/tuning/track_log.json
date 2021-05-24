@@ -1,0 +1,138 @@
+[
+  {
+    "cam_num": "1",
+    "num": 0,
+    "score_threshold":  0.5,
+    "max_iou_distance" : 0.9,
+    "max_age": 60,
+    "n_init": 6
+  },
+  {
+    "cam_num": "1_dawn",
+    "num": 0,
+    "score_threshold":  0.5,
+    "max_iou_distance" : 0.9,
+    "max_age": 60,
+    "n_init": 6
+  },
+  {
+    "cam_num": "1_rain",
+    "num": 0,
+    "score_threshold":  0.5,
+    "max_iou_distance" : 0.9,
+    "max_age": 60,
+    "n_init": 6
+  },
+  {
+    "cam_num": "2",
+    "num": 0,
+    "score_threshold":  0.5,
+    "max_iou_distance" : 0.9,
+    "max_age": 60,
+    "n_init": 6
+  },
+  {
+    "cam_num": "2_rain",
+    "num": 0,
+    "score_threshold":  0.5,
+    "max_iou_distance" : 0.9,
+    "max_age": 60,
+    "n_init": 6
+  },
+  {
+    "cam_num": "4",
+    "num": 0,
+    "score_threshold":  0.5,
+    "max_iou_distance" : 0.9,
+    "max_age": 60,
+    "n_init": 6
+  },
+  {
+    "cam_num": "4_dawn",
+    "num": 0,
+    "score_threshold":  0.5,
+    "max_iou_distance" : 0.9,
+    "max_age": 60,
+    "n_init": 6
+  },
+  {
+    "cam_num": "4_rain",
+    "num": 0,
+    "score_threshold":  0.5,
+    "max_iou_distance" : 0.9,
+    "max_age": 60,
+    "n_init": 6
+  },
+  {
+    "cam_num": "5",
+    "num": 0,
+    "score_threshold":  0.5,
+    "max_iou_distance" : 0.9,
+    "max_age": 60,
+    "n_init": 6
+  },
+  {
+    "cam_num": "5_dawn",
+    "num": 0,
+    "score_threshold":  0.5,
+    "max_iou_distance" : 0.9,
+    "max_age": 60,
+    "n_init": 6
+  },
+  {
+    "cam_num": "5_rain",
+    "num": 0,
+    "score_threshold":  0.5,
+    "max_iou_distance" : 0.9,
+    "max_age": 60,
+    "n_init": 6
+  },
+  {
+    "cam_num": "8",
+    "num": 0,
+    "score_threshold":  0.5,
+    "max_iou_distance" : 0.9,
+    "max_age": 60,
+    "n_init": 6
+  },
+  {
+    "cam_num": "10",
+    "num": 0,
+    "score_threshold":  0.5,
+    "max_iou_distance" : 0.9,
+    "max_age": 60,
+    "n_init": 6
+  },
+  {
+    "cam_num": "11",
+    "num": 0,
+    "score_threshold":  0.5,
+    "max_iou_distance" : 0.9,
+    "max_age": 60,
+    "n_init": 6
+  },
+  {
+    "cam_num": "14",
+    "num": 0,
+    "score_threshold":  0.5,
+    "max_iou_distance" : 0.9,
+    "max_age": 60,
+    "n_init": 6
+  },
+  {
+    "cam_num": "15",
+    "num": 0,
+    "score_threshold":  0.5,
+    "max_iou_distance" : 0.9,
+    "max_age": 60,
+    "n_init": 6
+  },
+  {
+    "cam_num": "16",
+    "num": 0,
+    "score_threshold":  0.5,
+    "max_iou_distance" : 0.9,
+    "max_age": 60,
+    "n_init": 6
+  }
+]

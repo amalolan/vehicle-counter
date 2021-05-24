@@ -1,0 +1,121 @@
+[
+  {
+    "cam_num": "1",
+    "n_frames": 3000,
+    "grid_size": 49,
+    "roi_fps": 463.9109898159341,
+    "detection_roi_fps": 0.0021556108792622885
+  },
+  {
+    "cam_num": "10",
+    "n_frames": 2111,
+    "grid_size": 51,
+    "roi_fps": 287.47258509477416,
+    "detection_roi_fps": 0.0034786523207280943
+  },
+  {
+    "cam_num": "11",
+    "n_frames": 2111,
+    "grid_size": 74,
+    "roi_fps": 337.75873732161494,
+    "detection_roi_fps": 0.00296074256463279
+  },
+  {
+    "cam_num": "14",
+    "n_frames": 3000,
+    "grid_size": 147,
+    "roi_fps": 591.6065382312472,
+    "detection_roi_fps": 0.0016903427441914876
+  },
+  {
+    "cam_num": "15",
+    "n_frames": 3000,
+    "grid_size": 155,
+    "roi_fps": 324.7728684040713,
+    "detection_roi_fps": 0.0030790956020355226
+  },
+  {
+    "cam_num": "16",
+    "n_frames": 3000,
+    "grid_size": 105,
+    "roi_fps": 593.2921262044862,
+    "detection_roi_fps": 0.0016855332851409912
+  },
+  {
+    "cam_num": "1_rain",
+    "n_frames": 2961,
+    "grid_size": 66,
+    "roi_fps": 758.1405675297724,
+    "detection_roi_fps": 0.0013190452732857881
+  },
+  {
+    "cam_num": "1_dawn",
+    "n_frames": 3000,
+    "grid_size": 57,
+    "roi_fps": 781.3149729136453,
+    "detection_roi_fps": 0.0012799240748087564
+  },
+  {
+    "cam_num": "2",
+    "n_frames": 18000,
+    "grid_size": 45,
+    "roi_fps": 875.004777917858,
+    "detection_roi_fps": 0.001142856518427531
+  },
+  {
+    "cam_num": "2_rain",
+    "n_frames": 3000,
+    "grid_size": 60,
+    "roi_fps": 941.0799646840128,
+    "detection_roi_fps": 0.0010626391569773356
+  },
+  {
+    "cam_num": "4_rain",
+    "n_frames": 3000,
+    "grid_size": 68,
+    "roi_fps": 471.49109511476655,
+    "detection_roi_fps": 0.002120962937672933
+  },
+  {
+    "cam_num": "4_dawn",
+    "n_frames": 4500,
+    "grid_size": 80,
+    "roi_fps": 650.0273606107837,
+    "detection_roi_fps": 0.0015384159088134765
+  },
+  {
+    "cam_num": "5_dawn",
+    "n_frames": 3000,
+    "grid_size": 45,
+    "roi_fps": 457.35062052986893,
+    "detection_roi_fps": 0.0021865577697753906
+  },
+  {
+    "cam_num": "5_rain",
+    "n_frames": 3000,
+    "grid_size": 61,
+    "roi_fps": 471.2636876411123,
+    "detection_roi_fps": 0.0021219849586486816
+  },
+  {
+    "cam_num": "8",
+    "n_frames": 3000,
+    "grid_size": 100,
+    "roi_fps": 797.0681269021401,
+    "detection_roi_fps": 0.0012546300093332927
+  },
+  {
+    "cam_num": "4",
+    "n_frames": 27000,
+    "grid_size": 68,
+    "roi_fps": 579.6052959979071,
+    "detection_roi_fps": 0.0017253146877995243
+  },
+  {
+    "cam_num": "5",
+    "n_frames": 18000,
+    "grid_size": 64,
+    "roi_fps": 509.0279706548966,
+    "detection_roi_fps": 0.0019645330905914307
+  }
+]
