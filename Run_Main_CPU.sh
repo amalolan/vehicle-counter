@@ -16,14 +16,13 @@
 mkdir -p /scratch/$USER/$SLURM_JOB_NAME-$SLURM_JOB_ID
 
 ## Copy any scripts, data, etc. into the working directory (adjust filenames as needed)
-cp -r /data/lopezbeclab/yolov4-deepsort/main.py
-/scratch/$USER/$SLURM_JOB_NAME-$SLURM_JOB_ID
+cp -r /data/lopezbeclab/yolov4-deepsort/main.py /scratch/$USER/$SLURM_JOB_NAME-$SLURM_JOB_ID
 
 ## Run the job (again, adjust filenames as needed)
 cd /scratch/$USER/$SLURM_JOB_NAME-$SLURM_JOB_ID
 export PATH=/home/lopezbec/anaconda3/bin:$PATH
 source activate ICML
-srun python main.py cam_1 /Users/malolan/Documents/Research/Traffic/final/yolov4-deepsort videos
+srun python main.py $1 /Users/malolan/Documents/Research/Traffic/final/yolov4-deepsort videos
 ## Move outputs to the directory from which job was submitted and clean-up
 cp -pru /scratch/$USER/$SLURM_JOB_NAME-$SLURM_JOB_ID/* $SLURM_SUBMIT_DIR
 cd
