@@ -1,138 +1,196 @@
 [
-  {
-    "cam_num": "1",
-    "num": 0,
-    "score_threshold":  0.5,
-    "max_iou_distance" : 0.9,
-    "max_age": 60,
-    "n_init": 6
-  },
-  {
-    "cam_num": "1_dawn",
-    "num": 0,
-    "score_threshold":  0.5,
-    "max_iou_distance" : 0.9,
-    "max_age": 60,
-    "n_init": 6
-  },
-  {
-    "cam_num": "1_rain",
-    "num": 0,
-    "score_threshold":  0.5,
-    "max_iou_distance" : 0.9,
-    "max_age": 60,
-    "n_init": 6
-  },
-  {
-    "cam_num": "2",
-    "num": 0,
-    "score_threshold":  0.5,
-    "max_iou_distance" : 0.9,
-    "max_age": 60,
-    "n_init": 6
-  },
-  {
-    "cam_num": "2_rain",
-    "num": 0,
-    "score_threshold":  0.5,
-    "max_iou_distance" : 0.9,
-    "max_age": 60,
-    "n_init": 6
-  },
-  {
-    "cam_num": "4",
-    "num": 0,
-    "score_threshold":  0.5,
-    "max_iou_distance" : 0.9,
-    "max_age": 60,
-    "n_init": 6
-  },
-  {
-    "cam_num": "4_dawn",
-    "num": 0,
-    "score_threshold":  0.5,
-    "max_iou_distance" : 0.9,
-    "max_age": 60,
-    "n_init": 6
-  },
-  {
-    "cam_num": "4_rain",
-    "num": 0,
-    "score_threshold":  0.5,
-    "max_iou_distance" : 0.9,
-    "max_age": 60,
-    "n_init": 6
-  },
-  {
-    "cam_num": "5",
-    "num": 0,
-    "score_threshold":  0.5,
-    "max_iou_distance" : 0.9,
-    "max_age": 60,
-    "n_init": 6
-  },
-  {
-    "cam_num": "5_dawn",
-    "num": 0,
-    "score_threshold":  0.5,
-    "max_iou_distance" : 0.9,
-    "max_age": 60,
-    "n_init": 6
-  },
-  {
-    "cam_num": "5_rain",
-    "num": 0,
-    "score_threshold":  0.5,
-    "max_iou_distance" : 0.9,
-    "max_age": 60,
-    "n_init": 6
-  },
-  {
-    "cam_num": "8",
-    "num": 0,
-    "score_threshold":  0.5,
-    "max_iou_distance" : 0.9,
-    "max_age": 60,
-    "n_init": 6
-  },
-  {
-    "cam_num": "10",
-    "num": 0,
-    "score_threshold":  0.5,
-    "max_iou_distance" : 0.9,
-    "max_age": 60,
-    "n_init": 6
-  },
-  {
-    "cam_num": "11",
-    "num": 0,
-    "score_threshold":  0.5,
-    "max_iou_distance" : 0.9,
-    "max_age": 60,
-    "n_init": 6
-  },
-  {
-    "cam_num": "14",
-    "num": 0,
-    "score_threshold":  0.5,
-    "max_iou_distance" : 0.9,
-    "max_age": 60,
-    "n_init": 6
-  },
-  {
-    "cam_num": "15",
-    "num": 0,
-    "score_threshold":  0.5,
-    "max_iou_distance" : 0.9,
-    "max_age": 60,
-    "n_init": 6
-  },
-  {
-    "cam_num": "16",
-    "num": 0,
-    "score_threshold":  0.5,
-    "max_iou_distance" : 0.9,
-    "max_age": 60,
-    "n_init": 6
-  }
+    {
+        "cam_num": "1",
+        "tracks_num": "0",
+        "detections_num": "0",
+        "roi_num": "0",
+        "score_threshold": 0.5,
+        "max_iou_distance": 0.9,
+        "max_age": 60,
+        "n_init": 6
+    },
+    {
+        "cam_num": "1_dawn",
+        "tracks_num": "0",
+        "detections_num": "0",
+        "roi_num": "0",
+        "score_threshold": 0.5,
+        "max_iou_distance": 0.9,
+        "max_age": 60,
+        "n_init": 6
+    },
+    {
+        "cam_num": "1_rain",
+        "tracks_num": "0",
+        "detections_num": "0",
+        "roi_num": "0",
+        "score_threshold": 0.5,
+        "max_iou_distance": 0.9,
+        "max_age": 60,
+        "n_init": 6
+    },
+    {
+        "cam_num": "2",
+        "tracks_num": "0",
+        "detections_num": "0",
+        "roi_num": "0",
+        "score_threshold": 0.5,
+        "max_iou_distance": 0.9,
+        "max_age": 60,
+        "n_init": 6
+    },
+    {
+        "cam_num": "2_rain",
+        "tracks_num": "0",
+        "detections_num": "0",
+        "roi_num": "0",
+        "score_threshold": 0.5,
+        "max_iou_distance": 0.9,
+        "max_age": 60,
+        "n_init": 6
+    },
+    {
+        "cam_num": "4",
+        "tracks_num": "0",
+        "detections_num": "0",
+        "roi_num": "0",
+        "score_threshold": 0.5,
+        "max_iou_distance": 0.9,
+        "max_age": 60,
+        "n_init": 6
+    },
+    {
+        "cam_num": "4_dawn",
+        "tracks_num": "0",
+        "detections_num": "0",
+        "roi_num": "0",
+        "score_threshold": 0.5,
+        "max_iou_distance": 0.9,
+        "max_age": 60,
+        "n_init": 6
+    },
+    {
+        "cam_num": "4_rain",
+        "tracks_num": "0",
+        "detections_num": "0",
+        "roi_num": "0",
+        "score_threshold": 0.5,
+        "max_iou_distance": 0.9,
+        "max_age": 60,
+        "n_init": 6
+    },
+    {
+        "cam_num": "5",
+        "tracks_num": "0",
+        "detections_num": "0",
+        "roi_num": "0",
+        "score_threshold": 0.5,
+        "max_iou_distance": 0.9,
+        "max_age": 60,
+        "n_init": 6
+    },
+    {
+        "cam_num": "5_dawn",
+        "tracks_num": "0",
+        "detections_num": "0",
+        "roi_num": "0",
+        "score_threshold": 0.5,
+        "max_iou_distance": 0.9,
+        "max_age": 60,
+        "n_init": 6
+    },
+    {
+        "cam_num": "5_rain",
+        "tracks_num": "0",
+        "detections_num": "0",
+        "roi_num": "0",
+        "score_threshold": 0.5,
+        "max_iou_distance": 0.9,
+        "max_age": 60,
+        "n_init": 6
+    },
+    {
+        "cam_num": "8",
+        "tracks_num": "0",
+        "detections_num": "0",
+        "roi_num": "0",
+        "score_threshold": 0.5,
+        "max_iou_distance": 0.9,
+        "max_age": 60,
+        "n_init": 6
+    },
+    {
+        "cam_num": "10",
+        "tracks_num": "0",
+        "detections_num": "0",
+        "roi_num": "0",
+        "score_threshold": 0.5,
+        "max_iou_distance": 0.9,
+        "max_age": 60,
+        "n_init": 6
+    },
+    {
+        "cam_num": "11",
+        "tracks_num": "0",
+        "detections_num": "0",
+        "roi_num": "0",
+        "score_threshold": 0.5,
+        "max_iou_distance": 0.9,
+        "max_age": 60,
+        "n_init": 6
+    },
+    {
+        "cam_num": "14",
+        "tracks_num": "0",
+        "detections_num": "0",
+        "roi_num": "0",
+        "score_threshold": 0.5,
+        "max_iou_distance": 0.9,
+        "max_age": 60,
+        "n_init": 6
+    },
+    {
+        "cam_num": "15",
+        "tracks_num": "0",
+        "detections_num": "0",
+        "roi_num": "0",
+        "score_threshold": 0.5,
+        "max_iou_distance": 0.9,
+        "max_age": 60,
+        "n_init": 6
+    },
+    {
+        "cam_num": "16",
+        "tracks_num": "0",
+        "detections_num": "0",
+        "roi_num": "0",
+        "score_threshold": 0.5,
+        "max_iou_distance": 0.9,
+        "max_age": 60,
+        "n_init": 6
+    },
+    {
+        "tracks_num": "1",
+        "score_threshold": 0.5,
+        "max_iou_distance": 0.9,
+        "max_age": 90,
+        "n_init": 6,
+        "cam_num": "1",
+        "detections_num": "0",
+        "roi_num": "0",
+        "tracks_file": "/Users/malolan/Documents/Research/Traffic/final/yolov4-deepsort/outputs/tracks/tracks_cam_1_0_0_1.csv",
+        "tracks_time": 129.1340889930725
+    },
+    {
+        "tracks_num": "2",
+        "score_threshold": 0.5,
+        "max_iou_distance": 0.9,
+        "max_age": 30,
+        "n_init": 6,
+        "cam_num": "1",
+        "detections_num": "0",
+        "roi_num": "0",
+        "tracks_file": "/Users/malolan/Documents/Research/Traffic/final/yolov4-deepsort/outputs/tracks/tracks_cam_1_0_0_2.csv",
+        "tracks_time": 123.60295295715332
+    }
 ]

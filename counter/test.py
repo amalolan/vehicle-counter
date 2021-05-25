@@ -66,3 +66,31 @@ def temp_rep_path(tracks, cluster_number, min_lines=7, gamma=30):
     # plt.imshow(tracks.image)
     # plt.scatter(x, y)
     # plt.show()
+
+
+# """
+# Used to test clustering to see results if true k was used instead of finding
+# k with k-nn and silhouette index.
+# """
+#
+# def test_true_k(k_file="/outputs/true_k.json", angle_factor=100, region_factor=5,
+#                 min_cluster_size=3, percent_min_lines=0.05,
+#                 min_lines=5, min_paths=3):
+#     with open(WORKING_DIR + "/outputs/log.json", "r") as fp:
+#         cam_data = json.load(fp)
+#     with open(WORKING_DIR + k_file, "r") as fp:
+#         cam_k = json.load(fp)
+#     for cam_dict in cam_data:
+#         cam_num = cam_dict["cam_num"]
+#         track_file = WORKING_DIR + "/outputs/tracks/tracks_cam_" + cam_num + "_0.csv"
+#         n_frames = int(cam_dict["n_frames"])
+#         grid_size = int(cam_dict["grid_size"])
+#         k = cam_k["cam_" + cam_num.split("_")[0]]
+#         tracks = read_tracks(cam_num, track_file, angle_factor)
+#         counter = Counter(tracks, grid_size, region_factor)
+#         first_n = counter.cluster(min_cluster_size, percent_min_lines, min_lines, min_paths,
+#                                   fixed_n=k)
+#         counter.post_process()
+#         second_n = counter.cluster(min_cluster_size, percent_min_lines, min_lines, min_paths,
+#                                    fixed_n=k, plot_path=WORKING_DIR + "/outputs/true_k/cam_" + cam_num + ".png")
+

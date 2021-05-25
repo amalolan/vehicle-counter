@@ -41,7 +41,8 @@ from scipy.spatial import ConvexHull, convex_hull_plot_2d
 from collections import Counter
 
 
-def run_detector(video_path, video_output=None, detections_output=None, dont_show=False):
+def run_detector(video_path, video_output=None, detections_output=None, dont_show=True,
+                 score_threshold=0.25, iou_threshold=0.45):
 
     # Definition of the parameters
     max_cosine_distance = 0.4
@@ -112,8 +113,8 @@ def run_detector(video_path, video_output=None, detections_output=None, dont_sho
                 pred_conf, (tf.shape(pred_conf)[0], -1, tf.shape(pred_conf)[-1])),
             max_output_size_per_class=50,
             max_total_size=50,
-            iou_threshold=0.45,
-            score_threshold=0.25
+            iou_threshold=iou_threshold,
+            score_threshold=score_threshold
         )
 
         # convert data to numpy arrays and slice out unused elements
