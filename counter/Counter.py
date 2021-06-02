@@ -29,6 +29,7 @@ class Counter:
         plt.legend(handles=patches)
         if plot_path:
             plt.savefig(plot_path)
+            plt.clf()
         else:
             plt.show()
 
