@@ -192,5 +192,53 @@
         "roi_num": "0",
         "tracks_file": "/Users/malolan/Documents/Research/Traffic/final/yolov4-deepsort/outputs/tracks/tracks_cam_1_0_0_2.csv",
         "tracks_time": 123.60295295715332
+    },
+    {
+        "tracks_num": "3",
+        "score_threshold": 0.5,
+        "max_iou_distance": 0.95,
+        "max_age": 60,
+        "n_init": 6,
+        "cam_num": "1",
+        "detections_num": "0",
+        "roi_num": "0",
+        "tracks_file": "/scratch/vasum/RUN_MAIN-65896/yolov4-deepsort/outputs/tracks/tracks_cam_1_0_0_3.csv",
+        "tracks_time": 100.81439590454102
+    },
+    {
+        "tracks_num": "4",
+        "score_threshold": 0.5,
+        "max_iou_distance": 0.8,
+        "max_age": 60,
+        "n_init": 6,
+        "cam_num": "1",
+        "detections_num": "0",
+        "roi_num": "0",
+        "tracks_file": "/scratch/vasum/RUN_MAIN-65896/yolov4-deepsort/outputs/tracks/tracks_cam_1_0_0_4.csv",
+        "tracks_time": 99.8856303691864
+    },
+    {
+        "tracks_num": "5",
+        "score_threshold": 0.25,
+        "max_iou_distance": 0.9,
+        "max_age": 60,
+        "n_init": 6,
+        "cam_num": "1",
+        "detections_num": "0",
+        "roi_num": "0",
+        "tracks_file": "/scratch/vasum/RUN_MAIN-65896/yolov4-deepsort/outputs/tracks/tracks_cam_1_0_0_5.csv",
+        "tracks_time": 108.63970041275024
+    },
+    {
+        "tracks_num": "6",
+        "score_threshold": 0.75,
+        "max_iou_distance": 0.9,
+        "max_age": 60,
+        "n_init": 6,
+        "cam_num": "1",
+        "detections_num": "0",
+        "roi_num": "0",
+        "tracks_file": "/scratch/vasum/RUN_MAIN-65896/yolov4-deepsort/outputs/tracks/tracks_cam_1_0_0_6.csv",
+        "tracks_time": 83.90666842460632
     }
 ]
