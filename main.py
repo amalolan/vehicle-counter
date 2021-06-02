@@ -26,7 +26,7 @@ class Module:
         current_logs.append({**param_set, **outputs})
         with open(self.log_file, "w+") as fp:
             json.dump(current_logs, fp, indent=4)
-        print(outputs)
+        print(json.dumps(outputs, indent=2))
 
     def is_completed(self, param_set, other_data=None):
         if other_data is None:
@@ -173,7 +173,7 @@ class CountModule(Module):
                                              "detections_num": detections_num, "tracks_num": tracks_num,
                                              "count_num": str(i)}):
                 continue
-            print(param_set)
+            print(json.dumps(param_set, indent=2))
             cam_prefix = cam_name + "_" + detections_num + "_" + roi_num + "_" + tracks_num
             tracks_file = WORKING_DIR + "/outputs/tracks/tracks_" + cam_prefix + ".csv"
             plot_path = WORKING_DIR + "/outputs/counts/" + cam_name + "/counts_" + \

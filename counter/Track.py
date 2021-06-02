@@ -140,7 +140,7 @@ class Tracks:
         clusterer = KMeans(n_clusters=n, random_state=10)
         cluster_labels = clusterer.fit_predict(X)
         silhouette_avg = silhouette_score(X, cluster_labels)
-        print("n: " + str(n) + " score: " + str(silhouette_avg))
+        # print("n: " + str(n) + " score: " + str(silhouette_avg))
         return cluster_labels, silhouette_avg
 
     def update_clusters(self, cluster_labels):
