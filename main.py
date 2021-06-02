@@ -26,6 +26,7 @@ class Module:
         current_logs.append({**param_set, **outputs})
         with open(self.log_file, "w+") as fp:
             json.dump(current_logs, fp, indent=4)
+        print(outputs)
 
     def is_completed(self, param_set, other_data=None):
         if other_data is None:

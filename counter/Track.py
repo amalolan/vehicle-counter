@@ -118,12 +118,12 @@ class Tracks:
             if track.is_matched(cluster.rep_path, radius):
                 # plt.savefig("data/test_figs/matched/"+str(track.id)+".png")
                 new_tracks_list.append(track)
-            else:
-                # track.plot(2)
-                # cluster.plot(20, c='black')
-                # plt.savefig("data/test_figs/removed/"+str(track.id)+".png")
-
-                print(track.id)
+            # else:
+            #     # track.plot(2)
+            #     # cluster.plot(20, c='black')
+            #     # plt.savefig("data/test_figs/removed/"+str(track.id)+".png")
+            #
+            #     print(track.id)
         self.tracks_list = new_tracks_list
         # plt.show()
 
