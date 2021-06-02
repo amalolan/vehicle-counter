@@ -254,7 +254,7 @@ class Tuning:
                 for j in range(len(self.roi_module.hyperparams)):
                     for k in range(len(self.track_module.hyperparams)):
                         grid_size = self.roi_module.get_log({
-                            "cam_num": cam_num, "roi_num": str(j), "detections_num": str(k)},
+                            "cam_num": cam_num, "roi_num": str(j), "detections_num": str(i)},
                             ["grid_size"])['grid_size']
                         self.count_module.run(cam_name, grid_size, str(i), str(j), str(k))
 

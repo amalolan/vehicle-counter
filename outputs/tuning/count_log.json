@@ -214,5 +214,221 @@
         ],
         "tracks_time": 12.2927827835083,
         "plot_path": "/scratch/vasum/RUN_MAIN-65896/yolov4-deepsort/outputs/counts/cam_1/counts_cam_1_0_0_0_6.png"
+    },
+    {
+        "count_num": "0",
+        "angle_factor": 100,
+        "region_factor": 5,
+        "min_cluster_size": 3,
+        "percent_min_lines": 0.05,
+        "min_lines": 5,
+        "min_paths": 2,
+        "cam_num": "1",
+        "detections_num": "0",
+        "tracks_num": "0",
+        "cluster_data": [
+            {
+                "cluster_num": 0,
+                "tracks": 88
+            },
+            {
+                "cluster_num": 1,
+                "tracks": 150
+            },
+            {
+                "cluster_num": 2,
+                "tracks": 13
+            },
+            {
+                "cluster_num": 3,
+                "tracks": 11
+            }
+        ],
+        "tracks_time": 22.011194229125977,
+        "plot_path": "/Users/malolan/Documents/Research/Traffic/final/yolov4-deepsort/outputs/counts/cam_1/counts_cam_1_0_0_0_0.png"
+    },
+    {
+        "count_num": "1",
+        "angle_factor": 100,
+        "region_factor": 5,
+        "min_cluster_size": 3,
+        "percent_min_lines": 0.05,
+        "min_lines": 5,
+        "min_paths": 3,
+        "cam_num": "1",
+        "detections_num": "0",
+        "tracks_num": "0",
+        "cluster_data": [
+            {
+                "cluster_num": 0,
+                "tracks": 88
+            },
+            {
+                "cluster_num": 1,
+                "tracks": 150
+            },
+            {
+                "cluster_num": 2,
+                "tracks": 13
+            },
+            {
+                "cluster_num": 3,
+                "tracks": 11
+            }
+        ],
+        "tracks_time": 26.883162260055542,
+        "plot_path": "/Users/malolan/Documents/Research/Traffic/final/yolov4-deepsort/outputs/counts/cam_1/counts_cam_1_0_0_0_1.png"
+    },
+    {
+        "count_num": "2",
+        "angle_factor": 100,
+        "region_factor": 3,
+        "min_cluster_size": 3,
+        "percent_min_lines": 0.05,
+        "min_lines": 5,
+        "min_paths": 2,
+        "cam_num": "1",
+        "detections_num": "0",
+        "tracks_num": "0",
+        "cluster_data": [
+            {
+                "cluster_num": 0,
+                "tracks": 88
+            },
+            {
+                "cluster_num": 1,
+                "tracks": 150
+            },
+            {
+                "cluster_num": 2,
+                "tracks": 13
+            },
+            {
+                "cluster_num": 3,
+                "tracks": 10
+            }
+        ],
+        "tracks_time": 5.958105087280273,
+        "plot_path": "/Users/malolan/Documents/Research/Traffic/final/yolov4-deepsort/outputs/counts/cam_1/counts_cam_1_0_0_0_2.png"
+    },
+    {
+        "count_num": "3",
+        "angle_factor": 100,
+        "region_factor": 2,
+        "min_cluster_size": 3,
+        "percent_min_lines": 0.05,
+        "min_lines": 5,
+        "min_paths": 2,
+        "cam_num": "1",
+        "detections_num": "0",
+        "tracks_num": "0",
+        "cluster_data": [
+            {
+                "cluster_num": 0,
+                "tracks": 150
+            },
+            {
+                "cluster_num": 1,
+                "tracks": 97
+            },
+            {
+                "cluster_num": 2,
+                "tracks": 13
+            }
+        ],
+        "tracks_time": 10.91157603263855,
+        "plot_path": "/Users/malolan/Documents/Research/Traffic/final/yolov4-deepsort/outputs/counts/cam_1/counts_cam_1_0_0_0_3.png"
+    },
+    {
+        "count_num": "4",
+        "angle_factor": 100,
+        "region_factor": 5,
+        "min_cluster_size": 3,
+        "percent_min_lines": 0.03,
+        "min_lines": 5,
+        "min_paths": 2,
+        "cam_num": "1",
+        "detections_num": "0",
+        "tracks_num": "0",
+        "cluster_data": [
+            {
+                "cluster_num": 0,
+                "tracks": 88
+            },
+            {
+                "cluster_num": 1,
+                "tracks": 150
+            },
+            {
+                "cluster_num": 2,
+                "tracks": 13
+            },
+            {
+                "cluster_num": 3,
+                "tracks": 11
+            }
+        ],
+        "tracks_time": 6.085325002670288,
+        "plot_path": "/Users/malolan/Documents/Research/Traffic/final/yolov4-deepsort/outputs/counts/cam_1/counts_cam_1_0_0_0_4.png"
+    },
+    {
+        "count_num": "5",
+        "angle_factor": 100,
+        "region_factor": 3,
+        "min_cluster_size": 3,
+        "percent_min_lines": 0.03,
+        "min_lines": 5,
+        "min_paths": 2,
+        "cam_num": "1",
+        "detections_num": "0",
+        "tracks_num": "0",
+        "cluster_data": [
+            {
+                "cluster_num": 0,
+                "tracks": 88
+            },
+            {
+                "cluster_num": 1,
+                "tracks": 150
+            },
+            {
+                "cluster_num": 2,
+                "tracks": 13
+            },
+            {
+                "cluster_num": 3,
+                "tracks": 10
+            }
+        ],
+        "tracks_time": 5.760957956314087,
+        "plot_path": "/Users/malolan/Documents/Research/Traffic/final/yolov4-deepsort/outputs/counts/cam_1/counts_cam_1_0_0_0_5.png"
+    },
+    {
+        "count_num": "6",
+        "angle_factor": 100,
+        "region_factor": 2,
+        "min_cluster_size": 3,
+        "percent_min_lines": 0.03,
+        "min_lines": 5,
+        "min_paths": 2,
+        "cam_num": "1",
+        "detections_num": "0",
+        "tracks_num": "0",
+        "cluster_data": [
+            {
+                "cluster_num": 0,
+                "tracks": 150
+            },
+            {
+                "cluster_num": 1,
+                "tracks": 97
+            },
+            {
+                "cluster_num": 2,
+                "tracks": 13
+            }
+        ],
+        "tracks_time": 10.133180141448975,
+        "plot_path": "/Users/malolan/Documents/Research/Traffic/final/yolov4-deepsort/outputs/counts/cam_1/counts_cam_1_0_0_0_6.png"
     }
 ]
