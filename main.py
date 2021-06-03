@@ -264,7 +264,12 @@ if __name__ == '__main__':
     WORKING_DIR = os.getcwd()
     PARENT_DIR = os.path.abspath(os.path.join(sys.argv[2], os.pardir))
     tuner = Tuning(PARENT_DIR + "/" + sys.argv[3])
-    tuner.by_video(sys.argv[1])
+    cam_names = [sys.argv[1]]
+    if sys.argv[1] == 'all':
+        cam_names = ['cam_4_rain', 'cam_5', 'cam_8', 'cam_10', 'cam_11',
+                     'cam_14', 'cam_15', 'cam_16']
+    for cam_name in cam_names:
+        tuner.by_video(cam_name)
 
 # python object_tracker.py --video ../data/cam_1.mp4 --output ../data/tracked_1_new.avi --model yolov4 --score 0.5
 # --tracks_output ../data/tracks_1_new.csv --roi_file ../data/hull_1.txt --info
