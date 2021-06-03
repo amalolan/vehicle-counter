@@ -312,5 +312,77 @@
         "roi_num": "0",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65901/yolov4-deepsort/outputs/tracks/tracks_cam_2_0_0_6.csv",
         "tracks_time": 417.1376521587372
+    },
+    {
+        "tracks_num": "1",
+        "score_threshold": 0.5,
+        "max_iou_distance": 0.9,
+        "max_age": 90,
+        "n_init": 6,
+        "cam_num": "4",
+        "detections_num": "0",
+        "roi_num": "0",
+        "tracks_file": "/scratch/vasum/RUN_MAIN-65909/yolov4-deepsort/outputs/tracks/tracks_cam_4_0_0_1.csv",
+        "tracks_time": 1470.2227482795715
+    },
+    {
+        "tracks_num": "2",
+        "score_threshold": 0.5,
+        "max_iou_distance": 0.9,
+        "max_age": 30,
+        "n_init": 6,
+        "cam_num": "4",
+        "detections_num": "0",
+        "roi_num": "0",
+        "tracks_file": "/scratch/vasum/RUN_MAIN-65909/yolov4-deepsort/outputs/tracks/tracks_cam_4_0_0_2.csv",
+        "tracks_time": 1436.015438079834
+    },
+    {
+        "tracks_num": "3",
+        "score_threshold": 0.5,
+        "max_iou_distance": 0.95,
+        "max_age": 60,
+        "n_init": 6,
+        "cam_num": "4",
+        "detections_num": "0",
+        "roi_num": "0",
+        "tracks_file": "/scratch/vasum/RUN_MAIN-65909/yolov4-deepsort/outputs/tracks/tracks_cam_4_0_0_3.csv",
+        "tracks_time": 1409.4009835720062
+    },
+    {
+        "tracks_num": "4",
+        "score_threshold": 0.5,
+        "max_iou_distance": 0.8,
+        "max_age": 60,
+        "n_init": 6,
+        "cam_num": "4",
+        "detections_num": "0",
+        "roi_num": "0",
+        "tracks_file": "/scratch/vasum/RUN_MAIN-65909/yolov4-deepsort/outputs/tracks/tracks_cam_4_0_0_4.csv",
+        "tracks_time": 1346.4640274047852
+    },
+    {
+        "tracks_num": "5",
+        "score_threshold": 0.25,
+        "max_iou_distance": 0.9,
+        "max_age": 60,
+        "n_init": 6,
+        "cam_num": "4",
+        "detections_num": "0",
+        "roi_num": "0",
+        "tracks_file": "/scratch/vasum/RUN_MAIN-65909/yolov4-deepsort/outputs/tracks/tracks_cam_4_0_0_5.csv",
+        "tracks_time": 1526.699545621872
+    },
+    {
+        "tracks_num": "6",
+        "score_threshold": 0.75,
+        "max_iou_distance": 0.9,
+        "max_age": 60,
+        "n_init": 6,
+        "cam_num": "4",
+        "detections_num": "0",
+        "roi_num": "0",
+        "tracks_file": "/scratch/vasum/RUN_MAIN-65909/yolov4-deepsort/outputs/tracks/tracks_cam_4_0_0_6.csv",
+        "tracks_time": 1297.4424304962158
     }
 ]
