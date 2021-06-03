@@ -123,7 +123,15 @@ class Cluster:
         if len(path_1) < h_min_paths:
             path_1 = []
         paths = np.array(path_1 + path_2[::-1])
-        return paths
+        smooth_path = []
+        for point in paths:
+            flag = True
+            for other_point in paths:
+                if not np.array_equal(point, other_point) and np.linalg.norm(other_point - point) < gamma:
+                    flag = False
+            if flag:
+                smooth_path.append(point)
+        return smooth_path
 
     def plot(self, s=15, c=None):
         if len(self.rep_path) > 0:

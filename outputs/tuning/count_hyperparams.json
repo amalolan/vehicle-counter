@@ -1,0 +1,65 @@
+[
+    {
+        "count_num": "0",
+        "angle_factor": 100,
+        "region_factor": 5,
+        "min_cluster_size": 3,
+        "percent_min_lines": 0.05,
+        "min_lines": 5,
+        "min_paths": 2
+    },
+    {
+        "count_num": "1",
+        "angle_factor": 100,
+        "region_factor": 5,
+        "min_cluster_size": 3,
+        "percent_min_lines": 0.05,
+        "min_lines": 5,
+        "min_paths": 3
+    },
+    {
+        "count_num": "2",
+        "angle_factor": 100,
+        "region_factor": 3,
+        "min_cluster_size": 3,
+        "percent_min_lines": 0.05,
+        "min_lines": 5,
+        "min_paths": 2
+    },
+    {
+        "count_num": "3",
+        "angle_factor": 100,
+        "region_factor": 2,
+        "min_cluster_size": 3,
+        "percent_min_lines": 0.05,
+        "min_lines": 5,
+        "min_paths": 2
+    },
+    {
+        "count_num": "4",
+        "angle_factor": 100,
+        "region_factor": 5,
+        "min_cluster_size": 3,
+        "percent_min_lines": 0.03,
+        "min_lines": 5,
+        "min_paths": 2
+    },
+    {
+        "count_num": "5",
+        "angle_factor": 100,
+        "region_factor": 3,
+        "min_cluster_size": 3,
+        "percent_min_lines": 0.03,
+        "min_lines": 5,
+        "min_paths": 2
+    },
+    {
+        "count_num": "6",
+        "angle_factor": 100,
+        "region_factor": 2,
+        "min_cluster_size": 3,
+        "percent_min_lines": 0.03,
+        "min_lines": 5,
+        "min_paths": 2
+    }
+]

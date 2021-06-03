@@ -65,22 +65,22 @@ def explore(grid, point, box_size, threshold, explored, cluster):
                 explore(grid, neighbor, box_size, threshold, explored, cluster)
 
 
-def dfs(grid, box_size, threshold=0.75):
+def dfs(grid, box_size, h_confidence_threshold=0.75):
     explored = dict()
     cluster = 1
     for point in grid:
-        if grid[point] >= threshold and not point in explored:
-            explore(grid, point, box_size, threshold, explored, cluster)
+        if grid[point] >= h_confidence_threshold and not point in explored:
+            explore(grid, point, box_size, h_confidence_threshold, explored, cluster)
             cluster += 1
     return explored
 
 
-def removeOutlierClusters(grid, box_size, clusters, threshold=0.25):
+def removeOutlierClusters(grid, box_size, clusters, h_outlier_threshold=0.25):
     sizes = Counter(clusters.values())
     avg = sum(sizes.values()) / len(sizes)
     print("Average cluster size: ", avg)
     for point in clusters:
-        if sizes[clusters[point]] <= threshold * avg:
+        if sizes[clusters[point]] <= h_outlier_threshold * avg:
             clusters[point] = 0
     return clusters
 
@@ -142,22 +142,16 @@ def plotConvexHull(cam_num, grid, box_size, clusters, n_frames, video_file_path,
     return hull_vertices
 
 
-def find_roi(cam_num="1"):
-    start = time.time()
-    video_file_path = "../videos/cam_" + str(cam_num) + ".mp4"
+def find_roi(video_file_path, detections_path, image_output_path,
+             hull_output_path, h_confidence_threshold, h_outlier_threshold):
     # detections_csv is the output of running yolo on the video, so it contains all
     # detected objects and their confidences.
-    detections_csv = "../detections/detections_cam_" + str(cam_num) + ".csv"
-    grid, box_size, n_frames = findGrid(detections_csv, video_file_path)
-    clusters = dfs(grid, box_size)
-    clusters = removeOutlierClusters(grid, box_size, clusters)
+    grid, box_size, n_frames = findGrid(detections_path, video_file_path)
+    clusters = dfs(grid, box_size, h_confidence_threshold=h_confidence_threshold)
+    clusters = removeOutlierClusters(grid, box_size, clusters, h_outlier_threshold=h_outlier_threshold)
     hull_vertices = plotConvexHull(cam_num, grid, box_size, clusters, n_frames,
                    output_hull="../hull/hull_cam_" + str(cam_num) + ".txt",
                    output_image="../hull/hull_cam_" + str(cam_num) + ".png",
                    video_file_path=video_file_path)
     # results will be saved in results/hull.txt
-    end = time.time()
-    print("seconds: ", (end - start))
-    fps = n_frames / (end - start)
-    print("fps: ", fps)
-    return n_frames, box_size, fps, hull_vertices
+    return n_frames, box_size,hull_vertices

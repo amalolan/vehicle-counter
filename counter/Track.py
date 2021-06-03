@@ -118,12 +118,12 @@ class Tracks:
             if track.is_matched(cluster.rep_path, radius):
                 # plt.savefig("data/test_figs/matched/"+str(track.id)+".png")
                 new_tracks_list.append(track)
-            else:
-                # track.plot(2)
-                # cluster.plot(20, c='black')
-                # plt.savefig("data/test_figs/removed/"+str(track.id)+".png")
-
-                print(track.id)
+            # else:
+            #     # track.plot(2)
+            #     # cluster.plot(20, c='black')
+            #     # plt.savefig("data/test_figs/removed/"+str(track.id)+".png")
+            #
+            #     print(track.id)
         self.tracks_list = new_tracks_list
         # plt.show()
 
@@ -140,7 +140,7 @@ class Tracks:
         clusterer = KMeans(n_clusters=n, random_state=10)
         cluster_labels = clusterer.fit_predict(X)
         silhouette_avg = silhouette_score(X, cluster_labels)
-        print("n: " + str(n) + " score: " + str(silhouette_avg))
+        # print("n: " + str(n) + " score: " + str(silhouette_avg))
         return cluster_labels, silhouette_avg
 
     def update_clusters(self, cluster_labels):

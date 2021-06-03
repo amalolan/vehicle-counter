@@ -1,0 +1,7 @@
+[
+  {
+    "roi_num": "0",
+    "dfs_confidence": 0.75,
+    "outlier_threshold": 0.25
+  }
+]
