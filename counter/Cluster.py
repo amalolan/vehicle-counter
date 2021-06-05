@@ -140,4 +140,4 @@ class Cluster:
             if c is not None:
                 color = c
             plt.plot(x, y, color=color, markersize=s / 2)
-            plt.scatter(x, y, color=color, s=s)
+            # plt.scatter(x, y, color=color, s=s)
