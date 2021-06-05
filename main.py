@@ -266,8 +266,8 @@ if __name__ == '__main__':
     tuner = Tuning(PARENT_DIR + "/" + sys.argv[3])
     cam_names = [sys.argv[1]]
     if sys.argv[1] == 'all':
-        cam_names = ['cam_4_rain', 'cam_5', 'cam_8', 'cam_10', 'cam_11',
-                     'cam_14', 'cam_15', 'cam_16']
+        cam_names = ['cam_1', 'cam_2', 'cam_4', 'cam_4_rain', 'cam_5', 'cam_8',
+                     'cam_10', 'cam_11', 'cam_14', 'cam_15', 'cam_16']
     for cam_name in cam_names:
         tuner.by_video(cam_name)
 
