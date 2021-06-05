@@ -20,6 +20,7 @@ class Counter:
     #         else:
 
     def plot(self, cluster_labels, n, title, plot_path=None):
+        plt.clf()
         plt.imshow(self.tracks.image)
         print(title)
         clusters, counts = np.unique(cluster_labels, return_counts=True)
