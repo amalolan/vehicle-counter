@@ -19,7 +19,7 @@ import time
 class Track:
     i = 0
 
-    def __init__(self, coords, width, height, h_angle_factor, cls="car"):
+    def __init__(self, coords, width, height, cls="car"):
         self.coords = coords
         self.cls = cls
         self.width = width
@@ -27,7 +27,6 @@ class Track:
         self.cluster = None
         self.id = Track.i
         Track.i += 1
-        self.h_angle_factor = h_angle_factor
 
     def rotate(self, rotation_matrix):
         self.coords = np.array(np.matmul(rotation_matrix, self.coords.T).T)
@@ -37,7 +36,7 @@ class Track:
         last = self.coords[-1]
         # distance = np.linalg.norm(last - first)
         dist = np.array([last[0] - first[0], last[1] - first[1]])
-        angle = atan2(dist[1], dist[0]) * self.h_angle_factor
+        angle = atan2(dist[1], dist[0])
         return np.hstack([first, last, dist, angle])
 
     def get_displacement(self):
@@ -64,7 +63,8 @@ class Track:
         y_vals = [self.coords[0][1], self.coords[-1][1]]
         self.plot_vals(x_vals, y_vals, 0)
 
-    def plot(self, markersize=5):
+    def plot(self, markersize=0):
+        print(self.id)
         for i in range(len(self.coords) - 1):
             x_vals = [self.coords[i][0], self.coords[i + 1][0]]
             y_vals = [self.coords[i][1], self.coords[i + 1][1]]
@@ -84,9 +84,10 @@ class Track:
 
 class Tracks:
 
-    def __init__(self, image=None):
+    def __init__(self,h_angle_factor, image=None):
         self.tracks_list = []
         self.image = image
+        self.h_angle_factor = h_angle_factor
 
     def append(self, track):
         self.tracks_list.append(track)
@@ -134,7 +135,10 @@ class Tracks:
     def normalize(self):
         cluster_values = np.array([track.get_cluster_value() for track in self.tracks_list])
         std_scaler = StandardScaler()
-        return std_scaler.fit_transform(cluster_values)
+        normalized = std_scaler.fit_transform(cluster_values)
+        normalized[:, -1] *= self.h_angle_factor
+        return normalized
+
 
     def n_cluster(self, n, X):
         clusterer = KMeans(n_clusters=n, random_state=10)

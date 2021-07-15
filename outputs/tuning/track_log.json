@@ -3,7 +3,7 @@
         "cam_num": "1",
         "tracks_num": "0",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "score_threshold": 0.5,
         "max_iou_distance": 0.9,
         "max_age": 60,
@@ -13,7 +13,7 @@
         "cam_num": "1_dawn",
         "tracks_num": "0",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "score_threshold": 0.5,
         "max_iou_distance": 0.9,
         "max_age": 60,
@@ -23,7 +23,7 @@
         "cam_num": "1_rain",
         "tracks_num": "0",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "score_threshold": 0.5,
         "max_iou_distance": 0.9,
         "max_age": 60,
@@ -33,7 +33,7 @@
         "cam_num": "2",
         "tracks_num": "0",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "score_threshold": 0.5,
         "max_iou_distance": 0.9,
         "max_age": 60,
@@ -43,7 +43,7 @@
         "cam_num": "2_rain",
         "tracks_num": "0",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "score_threshold": 0.5,
         "max_iou_distance": 0.9,
         "max_age": 60,
@@ -53,7 +53,7 @@
         "cam_num": "4",
         "tracks_num": "0",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "score_threshold": 0.5,
         "max_iou_distance": 0.9,
         "max_age": 60,
@@ -63,7 +63,7 @@
         "cam_num": "4_dawn",
         "tracks_num": "0",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "score_threshold": 0.5,
         "max_iou_distance": 0.9,
         "max_age": 60,
@@ -73,7 +73,7 @@
         "cam_num": "4_rain",
         "tracks_num": "0",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "score_threshold": 0.5,
         "max_iou_distance": 0.9,
         "max_age": 60,
@@ -83,7 +83,7 @@
         "cam_num": "5",
         "tracks_num": "0",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "score_threshold": 0.5,
         "max_iou_distance": 0.9,
         "max_age": 60,
@@ -93,7 +93,7 @@
         "cam_num": "5_dawn",
         "tracks_num": "0",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "score_threshold": 0.5,
         "max_iou_distance": 0.9,
         "max_age": 60,
@@ -103,7 +103,7 @@
         "cam_num": "5_rain",
         "tracks_num": "0",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "score_threshold": 0.5,
         "max_iou_distance": 0.9,
         "max_age": 60,
@@ -113,7 +113,7 @@
         "cam_num": "8",
         "tracks_num": "0",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "score_threshold": 0.5,
         "max_iou_distance": 0.9,
         "max_age": 60,
@@ -123,7 +123,7 @@
         "cam_num": "10",
         "tracks_num": "0",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "score_threshold": 0.5,
         "max_iou_distance": 0.9,
         "max_age": 60,
@@ -133,7 +133,7 @@
         "cam_num": "11",
         "tracks_num": "0",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "score_threshold": 0.5,
         "max_iou_distance": 0.9,
         "max_age": 60,
@@ -143,7 +143,7 @@
         "cam_num": "14",
         "tracks_num": "0",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "score_threshold": 0.5,
         "max_iou_distance": 0.9,
         "max_age": 60,
@@ -153,7 +153,7 @@
         "cam_num": "15",
         "tracks_num": "0",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "score_threshold": 0.5,
         "max_iou_distance": 0.9,
         "max_age": 60,
@@ -163,7 +163,7 @@
         "cam_num": "16",
         "tracks_num": "0",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "score_threshold": 0.5,
         "max_iou_distance": 0.9,
         "max_age": 60,
@@ -177,7 +177,7 @@
         "n_init": 6,
         "cam_num": "1",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/Users/malolan/Documents/Research/Traffic/final/yolov4-deepsort/outputs/tracks/tracks_cam_1_0_0_1.csv",
         "tracks_time": 129.1340889930725
     },
@@ -189,7 +189,7 @@
         "n_init": 6,
         "cam_num": "1",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/Users/malolan/Documents/Research/Traffic/final/yolov4-deepsort/outputs/tracks/tracks_cam_1_0_0_2.csv",
         "tracks_time": 123.60295295715332
     },
@@ -201,7 +201,7 @@
         "n_init": 6,
         "cam_num": "1",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65896/yolov4-deepsort/outputs/tracks/tracks_cam_1_0_0_3.csv",
         "tracks_time": 100.81439590454102
     },
@@ -213,7 +213,7 @@
         "n_init": 6,
         "cam_num": "1",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65896/yolov4-deepsort/outputs/tracks/tracks_cam_1_0_0_4.csv",
         "tracks_time": 99.8856303691864
     },
@@ -225,7 +225,7 @@
         "n_init": 6,
         "cam_num": "1",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65896/yolov4-deepsort/outputs/tracks/tracks_cam_1_0_0_5.csv",
         "tracks_time": 108.63970041275024
     },
@@ -237,7 +237,7 @@
         "n_init": 6,
         "cam_num": "1",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65896/yolov4-deepsort/outputs/tracks/tracks_cam_1_0_0_6.csv",
         "tracks_time": 83.90666842460632
     },
@@ -249,7 +249,7 @@
         "n_init": 6,
         "cam_num": "2",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65901/yolov4-deepsort/outputs/tracks/tracks_cam_2_0_0_1.csv",
         "tracks_time": 446.4631390571594
     },
@@ -261,7 +261,7 @@
         "n_init": 6,
         "cam_num": "2",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65901/yolov4-deepsort/outputs/tracks/tracks_cam_2_0_0_2.csv",
         "tracks_time": 469.3216664791107
     },
@@ -273,7 +273,7 @@
         "n_init": 6,
         "cam_num": "2",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65901/yolov4-deepsort/outputs/tracks/tracks_cam_2_0_0_3.csv",
         "tracks_time": 458.19242310523987
     },
@@ -285,7 +285,7 @@
         "n_init": 6,
         "cam_num": "2",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65901/yolov4-deepsort/outputs/tracks/tracks_cam_2_0_0_4.csv",
         "tracks_time": 479.0476396083832
     },
@@ -297,7 +297,7 @@
         "n_init": 6,
         "cam_num": "2",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65901/yolov4-deepsort/outputs/tracks/tracks_cam_2_0_0_5.csv",
         "tracks_time": 547.3846247196198
     },
@@ -309,7 +309,7 @@
         "n_init": 6,
         "cam_num": "2",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65901/yolov4-deepsort/outputs/tracks/tracks_cam_2_0_0_6.csv",
         "tracks_time": 417.1376521587372
     },
@@ -321,7 +321,7 @@
         "n_init": 6,
         "cam_num": "4",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65909/yolov4-deepsort/outputs/tracks/tracks_cam_4_0_0_1.csv",
         "tracks_time": 1470.2227482795715
     },
@@ -333,7 +333,7 @@
         "n_init": 6,
         "cam_num": "4",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65909/yolov4-deepsort/outputs/tracks/tracks_cam_4_0_0_2.csv",
         "tracks_time": 1436.015438079834
     },
@@ -345,7 +345,7 @@
         "n_init": 6,
         "cam_num": "4",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65909/yolov4-deepsort/outputs/tracks/tracks_cam_4_0_0_3.csv",
         "tracks_time": 1409.4009835720062
     },
@@ -357,7 +357,7 @@
         "n_init": 6,
         "cam_num": "4",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65909/yolov4-deepsort/outputs/tracks/tracks_cam_4_0_0_4.csv",
         "tracks_time": 1346.4640274047852
     },
@@ -369,7 +369,7 @@
         "n_init": 6,
         "cam_num": "4",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65909/yolov4-deepsort/outputs/tracks/tracks_cam_4_0_0_5.csv",
         "tracks_time": 1526.699545621872
     },
@@ -381,7 +381,7 @@
         "n_init": 6,
         "cam_num": "4",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65909/yolov4-deepsort/outputs/tracks/tracks_cam_4_0_0_6.csv",
         "tracks_time": 1297.4424304962158
     },
@@ -393,7 +393,7 @@
         "n_init": 6,
         "cam_num": "4_rain",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65910/yolov4-deepsort/outputs/tracks/tracks_cam_4_rain_0_0_1.csv",
         "tracks_time": 1.0104413032531738
     },
@@ -405,7 +405,7 @@
         "n_init": 6,
         "cam_num": "4_rain",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65910/yolov4-deepsort/outputs/tracks/tracks_cam_4_rain_0_0_2.csv",
         "tracks_time": 0.9765779972076416
     },
@@ -417,7 +417,7 @@
         "n_init": 6,
         "cam_num": "4_rain",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65910/yolov4-deepsort/outputs/tracks/tracks_cam_4_rain_0_0_3.csv",
         "tracks_time": 0.9860780239105225
     },
@@ -429,7 +429,7 @@
         "n_init": 6,
         "cam_num": "4_rain",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65910/yolov4-deepsort/outputs/tracks/tracks_cam_4_rain_0_0_4.csv",
         "tracks_time": 0.9852604866027832
     },
@@ -441,7 +441,7 @@
         "n_init": 6,
         "cam_num": "4_rain",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65910/yolov4-deepsort/outputs/tracks/tracks_cam_4_rain_0_0_5.csv",
         "tracks_time": 1.3839292526245117
     },
@@ -453,7 +453,7 @@
         "n_init": 6,
         "cam_num": "4_rain",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65910/yolov4-deepsort/outputs/tracks/tracks_cam_4_rain_0_0_6.csv",
         "tracks_time": 0.5898170471191406
     },
@@ -465,7 +465,7 @@
         "n_init": 6,
         "cam_num": "5",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65910/yolov4-deepsort/outputs/tracks/tracks_cam_5_0_0_1.csv",
         "tracks_time": 516.1734042167664
     },
@@ -477,7 +477,7 @@
         "n_init": 6,
         "cam_num": "5",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65910/yolov4-deepsort/outputs/tracks/tracks_cam_5_0_0_2.csv",
         "tracks_time": 477.68321895599365
     },
@@ -489,7 +489,7 @@
         "n_init": 6,
         "cam_num": "5",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65910/yolov4-deepsort/outputs/tracks/tracks_cam_5_0_0_3.csv",
         "tracks_time": 492.25025153160095
     },
@@ -501,7 +501,7 @@
         "n_init": 6,
         "cam_num": "5",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65910/yolov4-deepsort/outputs/tracks/tracks_cam_5_0_0_4.csv",
         "tracks_time": 494.96442890167236
     },
@@ -513,7 +513,7 @@
         "n_init": 6,
         "cam_num": "5",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65910/yolov4-deepsort/outputs/tracks/tracks_cam_5_0_0_5.csv",
         "tracks_time": 577.9983072280884
     },
@@ -525,7 +525,7 @@
         "n_init": 6,
         "cam_num": "5",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65910/yolov4-deepsort/outputs/tracks/tracks_cam_5_0_0_6.csv",
         "tracks_time": 465.8563516139984
     },
@@ -537,7 +537,7 @@
         "n_init": 6,
         "cam_num": "8",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65910/yolov4-deepsort/outputs/tracks/tracks_cam_8_0_0_1.csv",
         "tracks_time": 126.57449340820312
     },
@@ -549,7 +549,7 @@
         "n_init": 6,
         "cam_num": "8",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65910/yolov4-deepsort/outputs/tracks/tracks_cam_8_0_0_2.csv",
         "tracks_time": 111.97676587104797
     },
@@ -561,7 +561,7 @@
         "n_init": 6,
         "cam_num": "8",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65910/yolov4-deepsort/outputs/tracks/tracks_cam_8_0_0_3.csv",
         "tracks_time": 119.42676138877869
     },
@@ -573,7 +573,7 @@
         "n_init": 6,
         "cam_num": "8",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65910/yolov4-deepsort/outputs/tracks/tracks_cam_8_0_0_4.csv",
         "tracks_time": 119.87674474716187
     },
@@ -585,7 +585,7 @@
         "n_init": 6,
         "cam_num": "8",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65910/yolov4-deepsort/outputs/tracks/tracks_cam_8_0_0_5.csv",
         "tracks_time": 218.00759768486023
     },
@@ -597,7 +597,7 @@
         "n_init": 6,
         "cam_num": "8",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65910/yolov4-deepsort/outputs/tracks/tracks_cam_8_0_0_6.csv",
         "tracks_time": 107.55773520469666
     },
@@ -609,7 +609,7 @@
         "n_init": 6,
         "cam_num": "10",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65910/yolov4-deepsort/outputs/tracks/tracks_cam_10_0_0_1.csv",
         "tracks_time": 120.26795673370361
     },
@@ -621,7 +621,7 @@
         "n_init": 6,
         "cam_num": "10",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65910/yolov4-deepsort/outputs/tracks/tracks_cam_10_0_0_2.csv",
         "tracks_time": 107.64965081214905
     },
@@ -633,7 +633,7 @@
         "n_init": 6,
         "cam_num": "10",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65910/yolov4-deepsort/outputs/tracks/tracks_cam_10_0_0_3.csv",
         "tracks_time": 113.99561285972595
     },
@@ -645,7 +645,7 @@
         "n_init": 6,
         "cam_num": "10",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65910/yolov4-deepsort/outputs/tracks/tracks_cam_10_0_0_4.csv",
         "tracks_time": 112.39603018760681
     },
@@ -657,7 +657,7 @@
         "n_init": 6,
         "cam_num": "10",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65910/yolov4-deepsort/outputs/tracks/tracks_cam_10_0_0_5.csv",
         "tracks_time": 128.6930775642395
     },
@@ -669,7 +669,7 @@
         "n_init": 6,
         "cam_num": "10",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65910/yolov4-deepsort/outputs/tracks/tracks_cam_10_0_0_6.csv",
         "tracks_time": 92.23150157928467
     },
@@ -681,7 +681,7 @@
         "n_init": 6,
         "cam_num": "11",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65910/yolov4-deepsort/outputs/tracks/tracks_cam_11_0_0_1.csv",
         "tracks_time": 146.36359286308289
     },
@@ -693,7 +693,7 @@
         "n_init": 6,
         "cam_num": "11",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65910/yolov4-deepsort/outputs/tracks/tracks_cam_11_0_0_2.csv",
         "tracks_time": 140.39860010147095
     },
@@ -705,7 +705,7 @@
         "n_init": 6,
         "cam_num": "11",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65910/yolov4-deepsort/outputs/tracks/tracks_cam_11_0_0_3.csv",
         "tracks_time": 140.5122013092041
     },
@@ -717,7 +717,7 @@
         "n_init": 6,
         "cam_num": "11",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65910/yolov4-deepsort/outputs/tracks/tracks_cam_11_0_0_4.csv",
         "tracks_time": 134.47407293319702
     },
@@ -729,7 +729,7 @@
         "n_init": 6,
         "cam_num": "11",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65910/yolov4-deepsort/outputs/tracks/tracks_cam_11_0_0_5.csv",
         "tracks_time": 159.6109640598297
     },
@@ -741,7 +741,7 @@
         "n_init": 6,
         "cam_num": "11",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65910/yolov4-deepsort/outputs/tracks/tracks_cam_11_0_0_6.csv",
         "tracks_time": 107.61188554763794
     },
@@ -753,7 +753,7 @@
         "n_init": 6,
         "cam_num": "14",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65910/yolov4-deepsort/outputs/tracks/tracks_cam_14_0_0_1.csv",
         "tracks_time": 71.72663593292236
     },
@@ -765,7 +765,7 @@
         "n_init": 6,
         "cam_num": "14",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65910/yolov4-deepsort/outputs/tracks/tracks_cam_14_0_0_2.csv",
         "tracks_time": 70.93154692649841
     },
@@ -777,7 +777,7 @@
         "n_init": 6,
         "cam_num": "14",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65910/yolov4-deepsort/outputs/tracks/tracks_cam_14_0_0_3.csv",
         "tracks_time": 71.67781066894531
     },
@@ -789,7 +789,7 @@
         "n_init": 6,
         "cam_num": "14",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65910/yolov4-deepsort/outputs/tracks/tracks_cam_14_0_0_4.csv",
         "tracks_time": 71.49226331710815
     },
@@ -801,7 +801,7 @@
         "n_init": 6,
         "cam_num": "14",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65910/yolov4-deepsort/outputs/tracks/tracks_cam_14_0_0_5.csv",
         "tracks_time": 72.40693306922913
     },
@@ -813,7 +813,7 @@
         "n_init": 6,
         "cam_num": "14",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65910/yolov4-deepsort/outputs/tracks/tracks_cam_14_0_0_6.csv",
         "tracks_time": 69.95784854888916
     },
@@ -825,7 +825,7 @@
         "n_init": 6,
         "cam_num": "15",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65910/yolov4-deepsort/outputs/tracks/tracks_cam_15_0_0_1.csv",
         "tracks_time": 166.51863813400269
     },
@@ -837,7 +837,7 @@
         "n_init": 6,
         "cam_num": "15",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65910/yolov4-deepsort/outputs/tracks/tracks_cam_15_0_0_2.csv",
         "tracks_time": 147.64490795135498
     },
@@ -849,7 +849,7 @@
         "n_init": 6,
         "cam_num": "15",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65910/yolov4-deepsort/outputs/tracks/tracks_cam_15_0_0_3.csv",
         "tracks_time": 155.3093979358673
     },
@@ -861,7 +861,7 @@
         "n_init": 6,
         "cam_num": "15",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65910/yolov4-deepsort/outputs/tracks/tracks_cam_15_0_0_4.csv",
         "tracks_time": 162.17245173454285
     },
@@ -873,7 +873,7 @@
         "n_init": 6,
         "cam_num": "15",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65910/yolov4-deepsort/outputs/tracks/tracks_cam_15_0_0_5.csv",
         "tracks_time": 325.7170419692993
     },
@@ -885,7 +885,7 @@
         "n_init": 6,
         "cam_num": "15",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65910/yolov4-deepsort/outputs/tracks/tracks_cam_15_0_0_6.csv",
         "tracks_time": 114.5221495628357
     },
@@ -897,7 +897,7 @@
         "n_init": 6,
         "cam_num": "16",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65910/yolov4-deepsort/outputs/tracks/tracks_cam_16_0_0_1.csv",
         "tracks_time": 135.84349846839905
     },
@@ -909,7 +909,7 @@
         "n_init": 6,
         "cam_num": "16",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65910/yolov4-deepsort/outputs/tracks/tracks_cam_16_0_0_2.csv",
         "tracks_time": 132.90577340126038
     },
@@ -921,7 +921,7 @@
         "n_init": 6,
         "cam_num": "16",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65910/yolov4-deepsort/outputs/tracks/tracks_cam_16_0_0_3.csv",
         "tracks_time": 136.43322658538818
     },
@@ -933,7 +933,7 @@
         "n_init": 6,
         "cam_num": "16",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65910/yolov4-deepsort/outputs/tracks/tracks_cam_16_0_0_4.csv",
         "tracks_time": 145.4517035484314
     },
@@ -945,7 +945,7 @@
         "n_init": 6,
         "cam_num": "16",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65910/yolov4-deepsort/outputs/tracks/tracks_cam_16_0_0_5.csv",
         "tracks_time": 147.41353154182434
     },
@@ -957,7 +957,7 @@
         "n_init": 6,
         "cam_num": "16",
         "detections_num": "0",
-        "roi_num": "0",
+        "roi_num": "9",
         "tracks_file": "/scratch/vasum/RUN_MAIN-65910/yolov4-deepsort/outputs/tracks/tracks_cam_16_0_0_6.csv",
         "tracks_time": 136.47317814826965
     }

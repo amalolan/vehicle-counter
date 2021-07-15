@@ -81,18 +81,19 @@ class ROIModule(Module):
                                              "roi_num": str(i)}):
                 continue
             start = time.time()
-            hull_file_prefix = WORKING_DIR + "/hull/hull_" + cam_name + "_" + detections_num + "_" + str(i)
+            hull_file_prefix = WORKING_DIR + "/outputs/hull/hull_" + cam_name + "_" + detections_num + "_" + str(i)
             n_frames, box_size, hull_vertices = find_roi(
-                PARENT_DIR + "/videos/cam_" + cam_name + ".mp4",
+                PARENT_DIR + "/videos/" + cam_name + ".mp4",
                 WORKING_DIR + "/outputs/detections/detections_" + cam_name + "_" + detections_num + ".csv",
                 hull_file_prefix + ".png", hull_file_prefix + ".txt",
-                param_set["dfs_confidence"], param_set["outlier_threshold"]
+                param_set["dfs_confidence"], param_set["outlier_threshold"],
+                n_frames_percent=param_set["n_frames_percent"]
             )
             self.log_run(param_set, {
                 "cam_num": cam_num,
                 "detections_num": detections_num,
                 "roi_num": str(i),
-                "n_frames": n_frames,
+                "total_frames": n_frames,
                 "grid_size": box_size,
                 "detection_time": time.time() - start,
                 "hull_file": hull_file_prefix + ".txt"
@@ -144,27 +145,27 @@ class CountModule(Module):
         self.min_n = min_n
         self.max_n = max_n
 
-    def read_tracks(self, cam_name, tracks_file, h_angle_factor):
+    def read_tracks(self, cam_name, tracks_file, h_angle_factor, n_frames):
         df = pd.read_csv(tracks_file)
         df.sort_values(by=['track', 'frame'], inplace=True)
+        df = df[df['frame'] <= int(n_frames)]
         gb = df.groupby(["track"])
         video_reader = imageio.get_reader(PARENT_DIR + "/videos/" + cam_name + ".mp4")
         image = video_reader.get_data(0)
         video_reader.close()
-        tracks = Tracks(image)
+        tracks = Tracks(h_angle_factor, image)
         for x in gb.groups:
             track_df = gb.get_group(x)
             coords = np.c_[track_df['x'].to_numpy(), track_df['y'].to_numpy()]
             track = Track(coords,
                           track_df['width'].mean(),
                           track_df['height'].mean(),
-                          h_angle_factor,
                           cls=track_df.iloc[0]['class']
                           )
             tracks.append(track)
         return tracks
 
-    def run(self, cam_name, grid_size, detections_num="0", roi_num="0", tracks_num="0"):
+    def run(self, cam_name, grid_size, n_frames, detections_num="0", roi_num="0", tracks_num="0"):
         cam_num = "_".join(cam_name.split("_")[1:])
         os.makedirs(WORKING_DIR + "/outputs/counts/" + cam_name, exist_ok=True)
         for i in range(len(self.hyperparams)):
@@ -180,7 +181,7 @@ class CountModule(Module):
                         cam_prefix + "_" + str(i) + ".png"
             start = time.time()
             try:
-                tracks = self.read_tracks(cam_name, tracks_file, param_set["angle_factor"])
+                tracks = self.read_tracks(cam_name, tracks_file, param_set["angle_factor"], n_frames)
                 counter = Counter(tracks, grid_size, param_set["region_factor"])
                 first_n = counter.cluster(param_set["min_cluster_size"],
                                           param_set["percent_min_lines"],
@@ -238,7 +239,7 @@ class Tuning:
         self.track_module = TrackModule(track_hyperparams_file, track_log_file)
         self.count_module = CountModule(count_hyperparams_file, count_log_file)
 
-    def by_video(self, cam_name, detection=False, roi=False, track=True, count=True):
+    def by_video(self, cam_name, detection=False, roi=False, track=False, count=True):
         cam_num = "_".join(cam_name.split("_")[1:])
         if detection:
             self.detection_module.run(cam_name)
@@ -252,11 +253,14 @@ class Tuning:
         if count:
             for i in range(len(self.detection_module.hyperparams)):
                 for j in range(len(self.roi_module.hyperparams)):
+                    j=9
                     for k in range(len(self.track_module.hyperparams)):
-                        grid_size = self.roi_module.get_log({
+                        logged_data = self.roi_module.get_log({
                             "cam_num": cam_num, "roi_num": str(j), "detections_num": str(i)},
-                            ["grid_size"])['grid_size']
-                        self.count_module.run(cam_name, grid_size, str(i), str(j), str(k))
+                            ["grid_size"])
+                        grid_size = logged_data['grid_size']
+                        n_frames = int(logged_data["total_frames"] * logged_data["n_frames_percent"])
+                        self.count_module.run(cam_name, grid_size, n_frames, str(i), str(j), str(k))
 
 
 # 100, 5, 3, 0.05, 5, 3

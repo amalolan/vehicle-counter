@@ -10,15 +10,13 @@ from collections import Counter
 
 
 def findGrid(detectionsFile, video_file_path,
-             n_frames=None, quantile=0.5):
+             n_frames_percent, quantile=0.5):
     # Read the detections csv.
     df = pd.read_csv(detectionsFile,
                      dtype={'frame': int, 'x': int, 'y': int, 'w': int,
                             'h': int, 'confidence': float})
-    if n_frames is not None:
-        df = df[df['frame'] <= int(n_frames)]
-    else:
-        n_frames = df['frame'].max()
+    n_frames = df['frame'].max()
+    df = df[df['frame'] <= int(n_frames * n_frames_percent)]
 
     video_reader = imageio.get_reader(video_file_path)
     image = video_reader.get_data(0)
@@ -97,7 +95,7 @@ def getPointsFromClusters(clusters, box_size):
 
 
 # plot the clusters and the convex hull (ROI) determined, and save it in results/hull.txt
-def plotConvexHull(cam_num, grid, box_size, clusters, n_frames, video_file_path,
+def plotConvexHull(grid, box_size, clusters, video_file_path,
                    output_hull="results/hull.txt", output_image="results/hull.png",
                    cams_file="results/cams.txt"):
     video_reader = imageio.get_reader(video_file_path)
@@ -108,8 +106,7 @@ def plotConvexHull(cam_num, grid, box_size, clusters, n_frames, video_file_path,
     fig, ax = plt.subplots(1, 1, figsize=(10, 8))
     ax.set_xlim([0, width])
     ax.set_ylim([height, 0])
-    print("YOLO Detection Confidence Clusters for " + str(n_frames)
-          + " frames and box sizes of " + str(box_size) + " x " + str(box_size))
+    print("YOLO Detection Confidence Clusters for box sizes of " + str(box_size) + " x " + str(box_size))
     implot = plt.imshow(image, cmap='viridis')
     cmap = plt.get_cmap('viridis')
 
@@ -143,15 +140,16 @@ def plotConvexHull(cam_num, grid, box_size, clusters, n_frames, video_file_path,
 
 
 def find_roi(video_file_path, detections_path, image_output_path,
-             hull_output_path, h_confidence_threshold, h_outlier_threshold):
+             hull_output_path, h_confidence_threshold, h_outlier_threshold,
+             n_frames_percent=1):
     # detections_csv is the output of running yolo on the video, so it contains all
     # detected objects and their confidences.
-    grid, box_size, n_frames = findGrid(detections_path, video_file_path)
+    grid, box_size, n_frames = findGrid(detections_path, video_file_path, n_frames_percent)
     clusters = dfs(grid, box_size, h_confidence_threshold=h_confidence_threshold)
     clusters = removeOutlierClusters(grid, box_size, clusters, h_outlier_threshold=h_outlier_threshold)
-    hull_vertices = plotConvexHull(cam_num, grid, box_size, clusters, n_frames,
-                   output_hull="../hull/hull_cam_" + str(cam_num) + ".txt",
-                   output_image="../hull/hull_cam_" + str(cam_num) + ".png",
-                   video_file_path=video_file_path)
+    hull_vertices = plotConvexHull(grid, box_size, clusters,
+                                   output_hull=hull_output_path,
+                                   output_image=image_output_path,
+                                   video_file_path=video_file_path)
     # results will be saved in results/hull.txt
-    return n_frames, box_size,hull_vertices
+    return n_frames, box_size, hull_vertices
