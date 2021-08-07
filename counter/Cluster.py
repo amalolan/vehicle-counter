@@ -5,7 +5,7 @@ from .QuadTree import *
 class Cluster:
 
     def __init__(self, tracks, cluster_number, height, width, grid_size, h_region_factor,
-                 h_percent_min_lines, h_min_lines, h_min_path):
+                 h_percent_min_lines=None, h_min_lines=None, h_min_path=None):
         self.number = cluster_number
         self.tracks = tracks
         self.height = height
@@ -17,6 +17,23 @@ class Cluster:
             self.rep_path = self.find_rep_path(self.grid_size, h_percent_min_lines, h_min_lines, h_min_path)
         else:
             self.rep_path = []
+
+    def get_num_tracks_for_frame(self, frame):
+        count = 0
+        for track in self.tracks:
+            if track.is_in_frame(frame):
+                count += 1
+        return count
+
+    def get_avg_confidence(self, frame=None):
+        avg_confidence = 0
+        count = 0
+        for track in self.tracks:
+            if frame is None or track.is_in_frame(frame):
+                avg_confidence += track.confidence
+                count += 1
+        return avg_confidence/count if count != 0 else 0
+
 
     @staticmethod
     def find_rotation_matrix(segments):
@@ -134,7 +151,13 @@ class Cluster:
         return smooth_path
 
     def plot(self, s=15, c=None):
-        if len(self.rep_path) > 0:
+        if type(self.rep_path) == Track:
+            x, y = np.hsplit(self.rep_path.coords, 2)
+            color = "C" + str(self.number)
+            if c is not None:
+                color = c
+            plt.plot(x, y, color=color, markersize=s / 2)
+        elif len(self.rep_path) > 0:
             x, y = zip(*self.rep_path)
             color = "C" + str(self.number)
             if c is not None:

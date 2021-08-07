@@ -1,0 +1,42 @@
+[
+  {
+    "frames_num": "0",
+    "n_frames_percent": 1
+  },
+  {
+    "frames_num": "1",
+    "n_frames_percent": 0.1
+  },
+  {
+    "frames_num": "2",
+    "n_frames_percent": 0.2
+  },
+  {
+    "frames_num": "3",
+    "n_frames_percent": 0.3
+  },
+  {
+    "frames_num": "4",
+    "n_frames_percent": 0.4
+  },
+  {
+    "frames_num": "5",
+    "n_frames_percent": 0.5
+  },
+  {
+    "frames_num": "6",
+    "n_frames_percent": 0.6
+  },
+  {
+    "frames_num": "7",
+    "n_frames_percent": 0.7
+  },
+  {
+    "frames_num": "8",
+    "n_frames_percent": 0.8
+  },
+  {
+    "frames_num": "9",
+    "n_frames_percent": 0.9
+  }
+]

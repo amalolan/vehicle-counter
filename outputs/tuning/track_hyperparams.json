@@ -47,6 +47,13 @@
     "max_iou_distance": 0.9,
     "max_age": 60,
     "n_init": 6
+  },
+  {
+    "tracks_num": "7",
+    "score_threshold": 0.5,
+    "max_iou_distance": 0.8,
+    "max_age": 30,
+    "n_init": 6
   }
 ]
 

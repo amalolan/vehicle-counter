@@ -103,7 +103,7 @@ def main(_argv):
 
     if FLAGS.tracks_output:
         tracks_file = open(FLAGS.tracks_output, 'w+')
-        tracks_file.write("track,frame,x,y,class,width,height\n")
+        tracks_file.write("track,frame,x,y,class,width,height,confidence\n")
 
     if FLAGS.roi_file:
         roi = np.genfromtxt(FLAGS.roi_file, delimiter=',')
@@ -165,6 +165,7 @@ def main(_argv):
         for track in tracker.tracks:
             if not track.is_confirmed() or track.time_since_update > 1:
                 continue
+            # confidence = track.
             bbox = track.to_tlbr()
             class_name = track.get_class()
 
@@ -190,9 +191,10 @@ def main(_argv):
                           (int(bbox[1]) + int(bbox[3])) // 2)
                 width = int(bbox[2] - bbox[0])
                 height = int(bbox[3] - bbox[1])
+                confidence = track.confidence_sum/track.hits
                 tracks_file.write(str(track.track_id) + "," + str(frame_num) + ","
                                   + str(center[0]) + "," + str(center[1]) + "," + str(class_name) +
-                                  "," + str(width) + "," + str(height) + "\n")
+                                  "," + str(width) + "," + str(height) + "," + str(confidence) + "\n")
 
         # calculate frames per second of running detections
         fps = 1.0 / (time.time() - start_time)

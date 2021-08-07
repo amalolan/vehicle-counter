@@ -2,57 +2,6 @@
   {
     "roi_num": "0",
     "dfs_confidence": 0.75,
-    "outlier_threshold": 0.25,
-    "n_frames_percent": 0.1
-  },
-  {
-    "roi_num": "0",
-    "dfs_confidence": 0.75,
-    "outlier_threshold": 0.25,
-    "n_frames_percent": 0.2
-  },
-  {
-    "roi_num": "0",
-    "dfs_confidence": 0.75,
-    "outlier_threshold": 0.25,
-    "n_frames_percent": 0.3
-  },
-  {
-    "roi_num": "0",
-    "dfs_confidence": 0.75,
-    "outlier_threshold": 0.25,
-    "n_frames_percent": 0.4
-  },
-  {
-    "roi_num": "0",
-    "dfs_confidence": 0.75,
-    "outlier_threshold": 0.25,
-    "n_frames_percent": 0.5
-  },
-  {
-    "roi_num": "0",
-    "dfs_confidence": 0.75,
-    "outlier_threshold": 0.25,
-    "n_frames_percent": 0.6
-  },{
-  "roi_num": "0",
-  "dfs_confidence": 0.75,
-  "outlier_threshold": 0.25,
-  "n_frames_percent": 0.7
-},{
-  "roi_num": "0",
-  "dfs_confidence": 0.75,
-  "outlier_threshold": 0.25,
-  "n_frames_percent": 0.8
-},{
-  "roi_num": "0",
-  "dfs_confidence": 0.75,
-  "outlier_threshold": 0.25,
-  "n_frames_percent": 0.9
-},{
-  "roi_num": "0",
-  "dfs_confidence": 0.75,
-  "outlier_threshold": 0.25,
-  "n_frames_percent": 1
-}
+    "outlier_threshold": 0.25
+  }
 ]

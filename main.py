@@ -50,13 +50,19 @@ class Module:
 
 
 class DetectionModule(Module):
-    def run(self, cam_name):
+    def run(self, cam_name, detections_num=None, single=False):
         cam_num = "_".join(cam_name.split("_")[1:])
         print(cam_num)
         for i in range(len(self.hyperparams)):
+            if detections_num is not None:
+                i = int(detections_num)
+                single = True
             param_set = self.hyperparams[i]
-            if self.is_completed(param_set, {"cam_num": cam_num, "detections_num": str(i)}):
-                continue
+            if self.is_completed(param_set, {"cam_num": cam_num}):
+                if single:
+                    break
+                else:
+                    continue
             start = time.time()
             output_file = WORKING_DIR + "/outputs/detections/detections_" + cam_name + "_" + str(i) + ".csv"
             run_detector(PARENT_DIR + "/videos/cam_" + cam_num + ".mp4",
@@ -69,50 +75,70 @@ class DetectionModule(Module):
                 "detection_time": time.time() - start,
                 "detections_file": output_file
             })
+            if single:
+                break
 
 
 class ROIModule(Module):
-    def run(self, cam_name, detections_num="0"):
+    def run(self, cam_name, n_frames_percent=1, detections_num="0", frames_num="0",
+            roi_num=None, single=False):
         cam_num = "_".join(cam_name.split("_")[1:])
         print(cam_num)
         for i in range(len(self.hyperparams)):
+            if roi_num is not None:
+                i = int(roi_num)
+                single = True
             param_set = self.hyperparams[i]
             if self.is_completed(param_set, {"cam_num": cam_num, "detections_num": detections_num,
-                                             "roi_num": str(i)}):
-                continue
+                                             "frames_num": frames_num}):
+                if single:
+                    break
+                else:
+                    continue
             start = time.time()
-            hull_file_prefix = WORKING_DIR + "/outputs/hull/hull_" + cam_name + "_" + detections_num + "_" + str(i)
+            hull_file_prefix = WORKING_DIR + "/outputs/hull/hull_" + cam_name + "_" + frames_num + \
+                               "_" + detections_num + "_" + str(i)
             n_frames, box_size, hull_vertices = find_roi(
                 PARENT_DIR + "/videos/" + cam_name + ".mp4",
                 WORKING_DIR + "/outputs/detections/detections_" + cam_name + "_" + detections_num + ".csv",
                 hull_file_prefix + ".png", hull_file_prefix + ".txt",
                 param_set["dfs_confidence"], param_set["outlier_threshold"],
-                n_frames_percent=param_set["n_frames_percent"]
+                n_frames_percent=n_frames_percent
             )
             self.log_run(param_set, {
                 "cam_num": cam_num,
                 "detections_num": detections_num,
+                "frames_num": frames_num,
                 "roi_num": str(i),
                 "total_frames": n_frames,
                 "grid_size": box_size,
                 "detection_time": time.time() - start,
                 "hull_file": hull_file_prefix + ".txt"
             })
+            if single:
+                break
 
 
 class TrackModule(Module):
-    def run(self, cam_name, detections_num="0", roi_num="0"):
+    def run(self, cam_name, detections_num="0", roi_num="0",
+            frames_num="0", single=False, tracks_num=None):
         cam_num = "_".join(cam_name.split("_")[1:])
         video_path = PARENT_DIR + "/videos/cam_" + cam_num + ".mp4"
         print(cam_num)
         for i in range(len(self.hyperparams)):
+            if tracks_num is not None:
+                i = int(tracks_num)
+                single = True
             param_set = self.hyperparams[i]
             if self.is_completed(param_set, {"cam_num": cam_num, "detections_num": detections_num,
-                                             "roi_num": roi_num, "tracks_num": str(i)}):
-                continue
+                                             "frames_num": frames_num, "roi_num": roi_num}):
+                if single:
+                    break
+                else:
+                    continue
             start = time.time()
             # frames = int(cv2.VideoCapture(video_path).get(cv2.CAP_PROP_FRAME_COUNT))
-            cam_prefix = cam_name + "_" + detections_num + "_" + roi_num
+            cam_prefix = cam_name + "_" + frames_num + "_" + detections_num + "_" + roi_num
             tracks_file = WORKING_DIR + "/outputs/tracks/tracks_" + cam_prefix + "_" + str(i) + ".csv"
             try:
                 counter_helper([video_path,
@@ -131,12 +157,14 @@ class TrackModule(Module):
             self.log_run(param_set, {
                 "cam_num": cam_num,
                 "detections_num": detections_num,
+                "frames_num": frames_num,
                 "roi_num": roi_num,
                 "tracks_num": str(i),
                 "tracks_file": tracks_file,
                 "tracks_time": time.time() - start
             })
-            # break  # TODO: REMOVE if running for all tracks
+            if single:
+                break
 
 
 class CountModule(Module):
@@ -154,70 +182,121 @@ class CountModule(Module):
         image = video_reader.get_data(0)
         video_reader.close()
         tracks = Tracks(h_angle_factor, image)
+        count = 0
         for x in gb.groups:
             track_df = gb.get_group(x)
+            confidence = float(track_df.tail(1)['confidence'])
             coords = np.c_[track_df['x'].to_numpy(), track_df['y'].to_numpy()]
             track = Track(coords,
+                          track_df['frame'].to_numpy(),
                           track_df['width'].mean(),
                           track_df['height'].mean(),
-                          cls=track_df.iloc[0]['class']
+                          confidence=confidence,
+                          cls=track_df.iloc[0]['class'],
+                          id=count
                           )
             tracks.append(track)
+            count += 1
         return tracks
 
-    def run(self, cam_name, grid_size, n_frames, detections_num="0", roi_num="0", tracks_num="0"):
+    def run(self, cam_name, grid_size, n_frames, total_frames,
+            detections_num="0", roi_num="0", tracks_num="0", frames_num="0",
+            single=False, analyze=False, count_num=None):
         cam_num = "_".join(cam_name.split("_")[1:])
         os.makedirs(WORKING_DIR + "/outputs/counts/" + cam_name, exist_ok=True)
         for i in range(len(self.hyperparams)):
+            if count_num is not None:
+                i = int(count_num)
+                single = True
             param_set = self.hyperparams[i]
             if self.is_completed(param_set, {"cam_num": cam_num, "roi_num": roi_num,
-                                             "detections_num": detections_num, "tracks_num": tracks_num,
-                                             "count_num": str(i)}):
-                continue
+                                             "detections_num": detections_num,
+                                             "tracks_num": tracks_num,
+                                             "frames_num": frames_num}):
+                if single:
+                    break
+                else:
+                    continue
             print(json.dumps(param_set, indent=2))
-            cam_prefix = cam_name + "_" + detections_num + "_" + roi_num + "_" + tracks_num
+            cam_prefix = cam_name + "_" + frames_num + "_" + detections_num + "_" + roi_num + "_" + tracks_num
             tracks_file = WORKING_DIR + "/outputs/tracks/tracks_" + cam_prefix + ".csv"
             plot_path = WORKING_DIR + "/outputs/counts/" + cam_name + "/counts_" + \
                         cam_prefix + "_" + str(i) + ".png"
             start = time.time()
             try:
                 tracks = self.read_tracks(cam_name, tracks_file, param_set["angle_factor"], n_frames)
+                # tracks.plot()
                 counter = Counter(tracks, grid_size, param_set["region_factor"])
-                first_n = counter.cluster(param_set["min_cluster_size"],
-                                          param_set["percent_min_lines"],
-                                          param_set["min_lines"],
-                                          param_set["min_paths"],
-                                          self.min_n, self.max_n)
+                counter.cluster(param_set["min_cluster_size"],
+                                param_set["percent_min_lines"],
+                                param_set["min_lines"],
+                                param_set["min_paths"],
+                                self.min_n, self.max_n)
                 counter.post_process()
-                second_n = counter.cluster(param_set["min_cluster_size"],
-                                           param_set["percent_min_lines"],
-                                           param_set["min_lines"],
-                                           param_set["min_paths"],
-                                           self.min_n, self.max_n, plot_path=plot_path)
-                if second_n != first_n:
-                    tracks = self.read_tracks(cam_name, tracks_file, param_set["angle_factor"])
-                    counter = Counter(tracks, grid_size, param_set["region_factor"])
-                    counter.cluster(param_set["min_cluster_size"],
-                                    param_set["percent_min_lines"],
-                                    param_set["min_lines"],
-                                    param_set["min_paths"],
-                                    fixed_n=second_n)
-                    counter.post_process()
-                    counter.cluster(param_set["min_cluster_size"],
-                                    param_set["percent_min_lines"],
-                                    param_set["min_lines"],
-                                    param_set["min_paths"],
-                                    fixed_n=second_n, plot_path=plot_path)
-                self.log_run(param_set, {
+                # tracks.plot()
+                counter.cluster(param_set["min_cluster_size"],
+                                param_set["percent_min_lines"],
+                                param_set["min_lines"],
+                                param_set["min_paths"],
+                                self.min_n, self.max_n, plot_path=plot_path)
+                tracks_for_n_frames = len(tracks.tracks_list)
+
+                all_tracks = self.read_tracks(cam_name, tracks_file, param_set["angle_factor"],
+                                              total_frames)
+                all_tracks.remove_small_paths()
+                all_counter = Counter(all_tracks, grid_size, param_set['region_factor'])
+                all_counter.update_track_clusters(counter.clusters, plot_path)
+                log_object = {
                     "cam_num": cam_num,
                     "detections_num": detections_num,
+                    "roi_num": roi_num,
+                    "frames_num": frames_num,
                     "tracks_num": tracks_num,
-                    "count_num": str(i),
-                    "cluster_data": [{"cluster_num": cluster.number, "tracks": len(cluster.tracks)}
-                                     for cluster in counter.clusters],
+                    "deep_sort_n_frames": tracks_for_n_frames,
+                    "avg_confidence_n_frames": all_tracks.get_avg_confidence(n_frames),
+                    "avg_confidence_total_frames": all_tracks.get_avg_confidence(),
+                    "cluster_data": [{"cluster_num": cluster.number, "counted_tracks": len(cluster.tracks),
+                                      "n_tracks_in_n_frames": cluster.get_num_tracks_for_frame(n_frames),
+                                      "avg_confidence_in_n_frames": cluster.get_avg_confidence(n_frames)}
+                                     for cluster in all_counter.clusters],
                     "tracks_time": time.time() - start,
                     "plot_path": plot_path
-                })
+                }
+                if analyze:
+                    full_tracks = self.read_tracks(cam_name,
+                                                   "/Users/malolan/Documents/Research/Traffic/final/yolov4-deepsort/outputs/tracks/tracks_" + cam_name + "_0_0_0_0.csv"
+                                                   , param_set["angle_factor"], total_frames)
+                    full_counter = Counter(full_tracks, grid_size, param_set["region_factor"])
+                    full_counter.cluster(param_set["min_cluster_size"],
+                                         param_set["percent_min_lines"],
+                                         param_set["min_lines"],
+                                         param_set["min_paths"],
+                                         self.min_n, self.max_n)
+                    full_counter.post_process()
+                    # full_tracks.plot()
+                    full_counter.cluster(param_set["min_cluster_size"],
+                                         param_set["percent_min_lines"],
+                                         param_set["min_lines"],
+                                         param_set["min_paths"],
+                                         self.min_n, self.max_n)
+                    new_plot_path = plot_path[:-4] + "_frame_counts.png"
+                    new_tracks = self.read_tracks(cam_name, tracks_file, param_set["angle_factor"], n_frames)
+                    new_counter = Counter(new_tracks, grid_size, param_set["region_factor"])
+                    new_counter.update_track_clusters(full_counter.clusters, new_plot_path,
+                                                      debug=False, total_n=True)
+                    log_object["n_tracks_based_on_total_frames"] = [
+                        {"cluster_num": cluster.number,
+                         "n_tracks_in_total_frames": len(cluster.tracks),
+                         "avg_confidence_in_total_frames": cluster.get_avg_confidence()}
+                        for cluster in new_counter.clusters]
+                    tracks_df = all_tracks.save_tracks_df(old_cluster_map=full_tracks.get_id_cluster_map(),
+                                                          path=WORKING_DIR + '/outputs/track_data/' +
+                                                               cam_prefix + ".csv")
+
+                self.log_run(param_set, log_object)
+
+                if single:
+                    break
             except FileNotFoundError:
                 print("File error!")
 
@@ -225,6 +304,7 @@ class CountModule(Module):
 class Tuning:
 
     def __init__(self, video_folder,
+                 frame_hyperparams_file="/outputs/tuning/frame_hyperparams.json",
                  track_hyperparams_file="/outputs/tuning/track_hyperparams.json",
                  count_hyperparams_file="/outputs/tuning/count_hyperparams.json",
                  roi_hyperparams_file="/outputs/tuning/roi_hyperparams.json",
@@ -234,33 +314,39 @@ class Tuning:
                  roi_log_file="/outputs/tuning/roi_log.json",
                  detection_log_file="/outputs/tuning/detection_log.json"):
         self.video_folder = video_folder
+        with open(WORKING_DIR + frame_hyperparams_file, "r") as fp:
+            self.frames = json.load(fp)
         self.detection_module = DetectionModule(detection_hyperparams_file, detection_log_file)
         self.roi_module = ROIModule(roi_hyperparams_file, roi_log_file)
         self.track_module = TrackModule(track_hyperparams_file, track_log_file)
         self.count_module = CountModule(count_hyperparams_file, count_log_file)
 
-    def by_video(self, cam_name, detection=False, roi=False, track=False, count=True):
+    def online(self, cam_name, detection=False, roi=True, track=True, count=True,
+               detections_num="0", roi_num="0", count_num="5", tracks_num="7"):
         cam_num = "_".join(cam_name.split("_")[1:])
-        if detection:
-            self.detection_module.run(cam_name)
-        if roi:
-            for i in range(len(self.detection_module.hyperparams)):
-                self.roi_module.run(cam_name, str(i))
-        if track:
-            for i in range(len(self.detection_module.hyperparams)):
-                for j in range(len(self.roi_module.hyperparams)):
-                    self.track_module.run(cam_name, str(i), str(j))
-        if count:
-            for i in range(len(self.detection_module.hyperparams)):
-                for j in range(len(self.roi_module.hyperparams)):
-                    j=9
-                    for k in range(len(self.track_module.hyperparams)):
-                        logged_data = self.roi_module.get_log({
-                            "cam_num": cam_num, "roi_num": str(j), "detections_num": str(i)},
-                            ["grid_size"])
-                        grid_size = logged_data['grid_size']
-                        n_frames = int(logged_data["total_frames"] * logged_data["n_frames_percent"])
-                        self.count_module.run(cam_name, grid_size, n_frames, str(i), str(j), str(k))
+        for frame_obj in self.frames:
+            if detection:
+                self.detection_module.run(cam_num, detections_num=detections_num)
+            if roi:
+                self.roi_module.run(cam_name, n_frames_percent=frame_obj['n_frames_percent'],
+                                    frames_num=frame_obj['frames_num'],
+                                    detections_num=detections_num,
+                                    roi_num=roi_num)
+            if track:
+                self.track_module.run(cam_name, frames_num=frame_obj['frames_num'],
+                                      detections_num=detections_num,
+                                      roi_num=roi_num, tracks_num=tracks_num)
+            if count:
+                logged_data = self.roi_module.get_log({
+                    "cam_num": cam_num, "roi_num": roi_num, "detections_num": detections_num},
+                    ["grid_size"])
+                grid_size = logged_data['grid_size']
+                n_frames = int(logged_data["total_frames"] * frame_obj["n_frames_percent"])
+                self.count_module.run(cam_name, grid_size, n_frames, logged_data['total_frames'],
+                                      frames_num=frame_obj['frames_num'],
+                                      detections_num=detections_num,
+                                      roi_num=roi_num, tracks_num=tracks_num,
+                                      count_num=count_num)
 
 
 # 100, 5, 3, 0.05, 5, 3
@@ -272,8 +358,10 @@ if __name__ == '__main__':
     if sys.argv[1] == 'all':
         cam_names = ['cam_1', 'cam_2', 'cam_4', 'cam_4_rain', 'cam_5', 'cam_8',
                      'cam_10', 'cam_11', 'cam_14', 'cam_15', 'cam_16']
+    elif sys.argv[1] == 'debug':
+        cam_names = ['cam_1']
     for cam_name in cam_names:
-        tuner.by_video(cam_name)
+        tuner.online(cam_name)
 
 # python object_tracker.py --video ../data/cam_1.mp4 --output ../data/tracked_1_new.avi --model yolov4 --score 0.5
 # --tracks_output ../data/tracks_1_new.csv --roi_file ../data/hull_1.txt --info
