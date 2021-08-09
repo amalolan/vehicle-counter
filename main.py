@@ -52,7 +52,7 @@ class Module:
 class DetectionModule(Module):
     def run(self, cam_name, detections_num=None, single=False):
         cam_num = "_".join(cam_name.split("_")[1:])
-        print(cam_num)
+        print("Detection: ", cam_num)
         for i in range(len(self.hyperparams)):
             if detections_num is not None:
                 i = int(detections_num)
@@ -83,7 +83,7 @@ class ROIModule(Module):
     def run(self, cam_name, n_frames_percent=1, detections_num="0", frames_num="0",
             roi_num=None, single=False):
         cam_num = "_".join(cam_name.split("_")[1:])
-        print(cam_num)
+        print("ROI ", cam_num)
         for i in range(len(self.hyperparams)):
             if roi_num is not None:
                 i = int(roi_num)
@@ -124,7 +124,7 @@ class TrackModule(Module):
             frames_num="0", single=False, tracks_num=None):
         cam_num = "_".join(cam_name.split("_")[1:])
         video_path = PARENT_DIR + "/videos/cam_" + cam_num + ".mp4"
-        print(cam_num)
+        print("Track ", cam_num)
         for i in range(len(self.hyperparams)):
             if tracks_num is not None:
                 i = int(tracks_num)
@@ -204,6 +204,7 @@ class CountModule(Module):
             single=False, analyze=False, count_num=None):
         cam_num = "_".join(cam_name.split("_")[1:])
         os.makedirs(WORKING_DIR + "/outputs/counts/" + cam_name, exist_ok=True)
+        print("Count ", cam_num)
         for i in range(len(self.hyperparams)):
             if count_num is not None:
                 i = int(count_num)
