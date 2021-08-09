@@ -105,6 +105,7 @@ class ROIModule(Module):
                 param_set["dfs_confidence"], param_set["outlier_threshold"],
                 n_frames_percent=n_frames_percent
             )
+            print(param_set)
             self.log_run(param_set, {
                 "cam_num": cam_num,
                 "detections_num": detections_num,

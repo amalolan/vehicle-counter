@@ -15,7 +15,7 @@ def findGrid(detectionsFile, video_file_path,
     df = pd.read_csv(detectionsFile,
                      dtype={'frame': int, 'x': int, 'y': int, 'w': int,
                             'h': int, 'confidence': float})
-    n_frames = df['frame'].max()
+    n_frames = int(df['frame'].max())
     df = df[df['frame'] <= int(n_frames * n_frames_percent)]
 
     video_reader = imageio.get_reader(video_file_path)
