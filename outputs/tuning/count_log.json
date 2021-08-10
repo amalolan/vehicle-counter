@@ -1,3 +1,1214 @@
 [
-
+    {
+        "count_num": "5",
+        "angle_factor": 1,
+        "region_factor": 3,
+        "min_cluster_size": 3,
+        "percent_min_lines": 0.03,
+        "min_lines": 5,
+        "min_paths": 2,
+        "cam_num": "1",
+        "detections_num": "0",
+        "roi_num": "0",
+        "frames_num": "0",
+        "tracks_num": "7",
+        "deep_sort_n_frames": 270,
+        "avg_confidence_n_frames": 0.8481428619240224,
+        "avg_confidence_total_frames": 0.8481428619240224,
+        "cluster_data": [
+            {
+                "cluster_num": 0,
+                "counted_tracks": 154,
+                "n_tracks_in_n_frames": 154,
+                "avg_confidence_in_n_frames": 0.8115655028248923
+            },
+            {
+                "cluster_num": 1,
+                "counted_tracks": 92,
+                "n_tracks_in_n_frames": 92,
+                "avg_confidence_in_n_frames": 0.8858081005787434
+            },
+            {
+                "cluster_num": 2,
+                "counted_tracks": 13,
+                "n_tracks_in_n_frames": 13,
+                "avg_confidence_in_n_frames": 0.9709420367053437
+            },
+            {
+                "cluster_num": 3,
+                "counted_tracks": 11,
+                "n_tracks_in_n_frames": 11,
+                "avg_confidence_in_n_frames": 0.9000812321853341
+            }
+        ],
+        "tracks_time": 6.200608491897583,
+        "plot_path": "/scratch/vasum/RUN_MAIN-76887/yolov4-deepsort/outputs/counts/cam_1/counts_cam_1_0_0_0_7_5.png"
+    },
+    {
+        "count_num": "5",
+        "angle_factor": 1,
+        "region_factor": 3,
+        "min_cluster_size": 3,
+        "percent_min_lines": 0.03,
+        "min_lines": 5,
+        "min_paths": 2,
+        "cam_num": "1",
+        "detections_num": "0",
+        "roi_num": "0",
+        "frames_num": "1",
+        "tracks_num": "7",
+        "deep_sort_n_frames": 11,
+        "avg_confidence_n_frames": 0.813855898293468,
+        "avg_confidence_total_frames": 0.8303296859019511,
+        "cluster_data": [
+            {
+                "cluster_num": 0,
+                "counted_tracks": 245,
+                "n_tracks_in_n_frames": 20,
+                "avg_confidence_in_n_frames": 0.8436489234627664
+            }
+        ],
+        "tracks_time": 2.1293628215789795,
+        "plot_path": "/scratch/vasum/RUN_MAIN-76887/yolov4-deepsort/outputs/counts/cam_1/counts_cam_1_1_0_0_7_5.png"
+    },
+    {
+        "count_num": "5",
+        "angle_factor": 1,
+        "region_factor": 3,
+        "min_cluster_size": 3,
+        "percent_min_lines": 0.03,
+        "min_lines": 5,
+        "min_paths": 2,
+        "cam_num": "1",
+        "detections_num": "0",
+        "roi_num": "0",
+        "frames_num": "2",
+        "tracks_num": "7",
+        "deep_sort_n_frames": 45,
+        "avg_confidence_n_frames": 0.8525692204184948,
+        "avg_confidence_total_frames": 0.8593882001631136,
+        "cluster_data": [
+            {
+                "cluster_num": 0,
+                "counted_tracks": 141,
+                "n_tracks_in_n_frames": 32,
+                "avg_confidence_in_n_frames": 0.8302054127271157
+            },
+            {
+                "cluster_num": 1,
+                "counted_tracks": 115,
+                "n_tracks_in_n_frames": 22,
+                "avg_confidence_in_n_frames": 0.9021341753659112
+            }
+        ],
+        "tracks_time": 2.6199960708618164,
+        "plot_path": "/scratch/vasum/RUN_MAIN-76887/yolov4-deepsort/outputs/counts/cam_1/counts_cam_1_2_0_0_7_5.png"
+    },
+    {
+        "count_num": "5",
+        "angle_factor": 1,
+        "region_factor": 3,
+        "min_cluster_size": 3,
+        "percent_min_lines": 0.03,
+        "min_lines": 5,
+        "min_paths": 2,
+        "cam_num": "1",
+        "detections_num": "0",
+        "roi_num": "0",
+        "frames_num": "3",
+        "tracks_num": "7",
+        "deep_sort_n_frames": 85,
+        "avg_confidence_n_frames": 0.848253448366401,
+        "avg_confidence_total_frames": 0.8530674634463172,
+        "cluster_data": [
+            {
+                "cluster_num": 0,
+                "counted_tracks": 116,
+                "n_tracks_in_n_frames": 45,
+                "avg_confidence_in_n_frames": 0.8933580036441842
+            },
+            {
+                "cluster_num": 1,
+                "counted_tracks": 143,
+                "n_tracks_in_n_frames": 46,
+                "avg_confidence_in_n_frames": 0.8172732730657287
+            }
+        ],
+        "tracks_time": 2.8870861530303955,
+        "plot_path": "/scratch/vasum/RUN_MAIN-76887/yolov4-deepsort/outputs/counts/cam_1/counts_cam_1_3_0_0_7_5.png"
+    },
+    {
+        "count_num": "5",
+        "angle_factor": 1,
+        "region_factor": 3,
+        "min_cluster_size": 3,
+        "percent_min_lines": 0.03,
+        "min_lines": 5,
+        "min_paths": 2,
+        "cam_num": "1",
+        "detections_num": "0",
+        "roi_num": "0",
+        "frames_num": "4",
+        "tracks_num": "7",
+        "deep_sort_n_frames": 114,
+        "avg_confidence_n_frames": 0.8582111747169844,
+        "avg_confidence_total_frames": 0.8622732921361219,
+        "cluster_data": [
+            {
+                "cluster_num": 0,
+                "counted_tracks": 91,
+                "n_tracks_in_n_frames": 43,
+                "avg_confidence_in_n_frames": 0.898457311751979
+            },
+            {
+                "cluster_num": 1,
+                "counted_tracks": 144,
+                "n_tracks_in_n_frames": 60,
+                "avg_confidence_in_n_frames": 0.8145209809007282
+            },
+            {
+                "cluster_num": 2,
+                "counted_tracks": 13,
+                "n_tracks_in_n_frames": 6,
+                "avg_confidence_in_n_frames": 0.9701856613226144
+            },
+            {
+                "cluster_num": 3,
+                "counted_tracks": 11,
+                "n_tracks_in_n_frames": 6,
+                "avg_confidence_in_n_frames": 0.8803602295107634
+            }
+        ],
+        "tracks_time": 3.1677749156951904,
+        "plot_path": "/scratch/vasum/RUN_MAIN-76887/yolov4-deepsort/outputs/counts/cam_1/counts_cam_1_4_0_0_7_5.png"
+    },
+    {
+        "count_num": "5",
+        "angle_factor": 1,
+        "region_factor": 3,
+        "min_cluster_size": 3,
+        "percent_min_lines": 0.03,
+        "min_lines": 5,
+        "min_paths": 2,
+        "cam_num": "1",
+        "detections_num": "0",
+        "roi_num": "0",
+        "frames_num": "5",
+        "tracks_num": "7",
+        "deep_sort_n_frames": 126,
+        "avg_confidence_n_frames": 0.8594539662815379,
+        "avg_confidence_total_frames": 0.8611645371358071,
+        "cluster_data": [
+            {
+                "cluster_num": 0,
+                "counted_tracks": 144,
+                "n_tracks_in_n_frames": 70,
+                "avg_confidence_in_n_frames": 0.8210925674284832
+            },
+            {
+                "cluster_num": 1,
+                "counted_tracks": 102,
+                "n_tracks_in_n_frames": 55,
+                "avg_confidence_in_n_frames": 0.8995057950924022
+            },
+            {
+                "cluster_num": 2,
+                "counted_tracks": 13,
+                "n_tracks_in_n_frames": 6,
+                "avg_confidence_in_n_frames": 0.9752119710750083
+            }
+        ],
+        "tracks_time": 3.174652576446533,
+        "plot_path": "/scratch/vasum/RUN_MAIN-76887/yolov4-deepsort/outputs/counts/cam_1/counts_cam_1_5_0_0_7_5.png"
+    },
+    {
+        "count_num": "5",
+        "angle_factor": 1,
+        "region_factor": 3,
+        "min_cluster_size": 3,
+        "percent_min_lines": 0.03,
+        "min_lines": 5,
+        "min_paths": 2,
+        "cam_num": "1",
+        "detections_num": "0",
+        "roi_num": "0",
+        "frames_num": "6",
+        "tracks_num": "7",
+        "deep_sort_n_frames": 145,
+        "avg_confidence_n_frames": 0.8613700854986708,
+        "avg_confidence_total_frames": 0.8631722056700506,
+        "cluster_data": [
+            {
+                "cluster_num": 0,
+                "counted_tracks": 91,
+                "n_tracks_in_n_frames": 52,
+                "avg_confidence_in_n_frames": 0.9015746571530829
+            },
+            {
+                "cluster_num": 1,
+                "counted_tracks": 145,
+                "n_tracks_in_n_frames": 81,
+                "avg_confidence_in_n_frames": 0.8234346938323922
+            },
+            {
+                "cluster_num": 2,
+                "counted_tracks": 13,
+                "n_tracks_in_n_frames": 6,
+                "avg_confidence_in_n_frames": 0.9752119710750083
+            },
+            {
+                "cluster_num": 3,
+                "counted_tracks": 11,
+                "n_tracks_in_n_frames": 7,
+                "avg_confidence_in_n_frames": 0.8913461264451453
+            }
+        ],
+        "tracks_time": 3.1949710845947266,
+        "plot_path": "/scratch/vasum/RUN_MAIN-76887/yolov4-deepsort/outputs/counts/cam_1/counts_cam_1_6_0_0_7_5.png"
+    },
+    {
+        "count_num": "5",
+        "angle_factor": 1,
+        "region_factor": 3,
+        "min_cluster_size": 3,
+        "percent_min_lines": 0.03,
+        "min_lines": 5,
+        "min_paths": 2,
+        "cam_num": "1",
+        "detections_num": "0",
+        "roi_num": "0",
+        "frames_num": "7",
+        "tracks_num": "7",
+        "deep_sort_n_frames": 195,
+        "avg_confidence_n_frames": 0.84810188579828,
+        "avg_confidence_total_frames": 0.8495032080960521,
+        "cluster_data": [
+            {
+                "cluster_num": 0,
+                "counted_tracks": 92,
+                "n_tracks_in_n_frames": 72,
+                "avg_confidence_in_n_frames": 0.8843907177415662
+            },
+            {
+                "cluster_num": 1,
+                "counted_tracks": 152,
+                "n_tracks_in_n_frames": 106,
+                "avg_confidence_in_n_frames": 0.8106509239604208
+            },
+            {
+                "cluster_num": 2,
+                "counted_tracks": 13,
+                "n_tracks_in_n_frames": 9,
+                "avg_confidence_in_n_frames": 0.966823141821291
+            },
+            {
+                "cluster_num": 3,
+                "counted_tracks": 11,
+                "n_tracks_in_n_frames": 8,
+                "avg_confidence_in_n_frames": 0.8841662296344507
+            }
+        ],
+        "tracks_time": 3.529985189437866,
+        "plot_path": "/scratch/vasum/RUN_MAIN-76887/yolov4-deepsort/outputs/counts/cam_1/counts_cam_1_7_0_0_7_5.png"
+    },
+    {
+        "count_num": "5",
+        "angle_factor": 1,
+        "region_factor": 3,
+        "min_cluster_size": 3,
+        "percent_min_lines": 0.03,
+        "min_lines": 5,
+        "min_paths": 2,
+        "cam_num": "1",
+        "detections_num": "0",
+        "roi_num": "0",
+        "frames_num": "8",
+        "tracks_num": "7",
+        "deep_sort_n_frames": 232,
+        "avg_confidence_n_frames": 0.8503213989695827,
+        "avg_confidence_total_frames": 0.8495032080960521,
+        "cluster_data": [
+            {
+                "cluster_num": 0,
+                "counted_tracks": 92,
+                "n_tracks_in_n_frames": 88,
+                "avg_confidence_in_n_frames": 0.8839034225658406
+            },
+            {
+                "cluster_num": 1,
+                "counted_tracks": 152,
+                "n_tracks_in_n_frames": 122,
+                "avg_confidence_in_n_frames": 0.8102071573732229
+            },
+            {
+                "cluster_num": 2,
+                "counted_tracks": 11,
+                "n_tracks_in_n_frames": 9,
+                "avg_confidence_in_n_frames": 0.8915048553829388
+            },
+            {
+                "cluster_num": 3,
+                "counted_tracks": 13,
+                "n_tracks_in_n_frames": 13,
+                "avg_confidence_in_n_frames": 0.9709420367053437
+            }
+        ],
+        "tracks_time": 3.77712082862854,
+        "plot_path": "/scratch/vasum/RUN_MAIN-76887/yolov4-deepsort/outputs/counts/cam_1/counts_cam_1_8_0_0_7_5.png"
+    },
+    {
+        "count_num": "5",
+        "angle_factor": 1,
+        "region_factor": 3,
+        "min_cluster_size": 3,
+        "percent_min_lines": 0.03,
+        "min_lines": 5,
+        "min_paths": 2,
+        "cam_num": "1",
+        "detections_num": "0",
+        "roi_num": "0",
+        "frames_num": "9",
+        "tracks_num": "7",
+        "deep_sort_n_frames": 247,
+        "avg_confidence_n_frames": 0.8480055836062291,
+        "avg_confidence_total_frames": 0.8481428619240224,
+        "cluster_data": [
+            {
+                "cluster_num": 0,
+                "counted_tracks": 92,
+                "n_tracks_in_n_frames": 89,
+                "avg_confidence_in_n_frames": 0.8841678413197434
+            },
+            {
+                "cluster_num": 1,
+                "counted_tracks": 154,
+                "n_tracks_in_n_frames": 135,
+                "avg_confidence_in_n_frames": 0.8088397963446512
+            },
+            {
+                "cluster_num": 2,
+                "counted_tracks": 11,
+                "n_tracks_in_n_frames": 10,
+                "avg_confidence_in_n_frames": 0.8950822289584016
+            },
+            {
+                "cluster_num": 3,
+                "counted_tracks": 13,
+                "n_tracks_in_n_frames": 13,
+                "avg_confidence_in_n_frames": 0.9709420367053437
+            }
+        ],
+        "tracks_time": 3.874981641769409,
+        "plot_path": "/scratch/vasum/RUN_MAIN-76887/yolov4-deepsort/outputs/counts/cam_1/counts_cam_1_9_0_0_7_5.png"
+    },
+    {
+        "count_num": "5",
+        "angle_factor": 1,
+        "region_factor": 3,
+        "min_cluster_size": 3,
+        "percent_min_lines": 0.03,
+        "min_lines": 5,
+        "min_paths": 2,
+        "cam_num": "2",
+        "detections_num": "0",
+        "roi_num": "0",
+        "frames_num": "0",
+        "tracks_num": "7",
+        "deep_sort_n_frames": 1377,
+        "avg_confidence_n_frames": 0.8647394269743592,
+        "avg_confidence_total_frames": 0.8647394269743592,
+        "cluster_data": [
+            {
+                "cluster_num": 0,
+                "counted_tracks": 600,
+                "n_tracks_in_n_frames": 600,
+                "avg_confidence_in_n_frames": 0.8707828690138274
+            },
+            {
+                "cluster_num": 1,
+                "counted_tracks": 778,
+                "n_tracks_in_n_frames": 778,
+                "avg_confidence_in_n_frames": 0.860109167634533
+            }
+        ],
+        "tracks_time": 11.789670467376709,
+        "plot_path": "/scratch/vasum/RUN_MAIN-76887/yolov4-deepsort/outputs/counts/cam_2/counts_cam_2_0_0_0_7_5.png"
+    },
+    {
+        "count_num": "5",
+        "angle_factor": 1,
+        "region_factor": 3,
+        "min_cluster_size": 3,
+        "percent_min_lines": 0.03,
+        "min_lines": 5,
+        "min_paths": 2,
+        "cam_num": "2",
+        "detections_num": "0",
+        "roi_num": "0",
+        "frames_num": "1",
+        "tracks_num": "7",
+        "deep_sort_n_frames": 122,
+        "avg_confidence_n_frames": 0.8489790125385649,
+        "avg_confidence_total_frames": 0.8788258878673717,
+        "cluster_data": [
+            {
+                "cluster_num": 0,
+                "counted_tracks": 751,
+                "n_tracks_in_n_frames": 65,
+                "avg_confidence_in_n_frames": 0.8330603796817434
+            },
+            {
+                "cluster_num": 1,
+                "counted_tracks": 594,
+                "n_tracks_in_n_frames": 58,
+                "avg_confidence_in_n_frames": 0.8673157353910493
+            }
+        ],
+        "tracks_time": 5.0626795291900635,
+        "plot_path": "/scratch/vasum/RUN_MAIN-76887/yolov4-deepsort/outputs/counts/cam_2/counts_cam_2_1_0_0_7_5.png"
+    },
+    {
+        "count_num": "5",
+        "angle_factor": 1,
+        "region_factor": 3,
+        "min_cluster_size": 3,
+        "percent_min_lines": 0.03,
+        "min_lines": 5,
+        "min_paths": 2,
+        "cam_num": "2",
+        "detections_num": "0",
+        "roi_num": "0",
+        "frames_num": "2",
+        "tracks_num": "7",
+        "deep_sort_n_frames": 233,
+        "avg_confidence_n_frames": 0.8658488316413328,
+        "avg_confidence_total_frames": 0.880485925575778,
+        "cluster_data": [
+            {
+                "cluster_num": 0,
+                "counted_tracks": 746,
+                "n_tracks_in_n_frames": 129,
+                "avg_confidence_in_n_frames": 0.8508805399576599
+            },
+            {
+                "cluster_num": 1,
+                "counted_tracks": 592,
+                "n_tracks_in_n_frames": 120,
+                "avg_confidence_in_n_frames": 0.8773221208670133
+            }
+        ],
+        "tracks_time": 5.4774696826934814,
+        "plot_path": "/scratch/vasum/RUN_MAIN-76887/yolov4-deepsort/outputs/counts/cam_2/counts_cam_2_2_0_0_7_5.png"
+    },
+    {
+        "count_num": "5",
+        "angle_factor": 1,
+        "region_factor": 3,
+        "min_cluster_size": 3,
+        "percent_min_lines": 0.03,
+        "min_lines": 5,
+        "min_paths": 2,
+        "cam_num": "2",
+        "detections_num": "0",
+        "roi_num": "0",
+        "frames_num": "3",
+        "tracks_num": "7",
+        "deep_sort_n_frames": 396,
+        "avg_confidence_n_frames": 0.8629255018340269,
+        "avg_confidence_total_frames": 0.8659622521411726,
+        "cluster_data": [
+            {
+                "cluster_num": 0,
+                "counted_tracks": 600,
+                "n_tracks_in_n_frames": 176,
+                "avg_confidence_in_n_frames": 0.8738448646601735
+            },
+            {
+                "cluster_num": 1,
+                "counted_tracks": 772,
+                "n_tracks_in_n_frames": 223,
+                "avg_confidence_in_n_frames": 0.8540169821922129
+            }
+        ],
+        "tracks_time": 7.012771844863892,
+        "plot_path": "/scratch/vasum/RUN_MAIN-76887/yolov4-deepsort/outputs/counts/cam_2/counts_cam_2_3_0_0_7_5.png"
+    },
+    {
+        "count_num": "5",
+        "angle_factor": 1,
+        "region_factor": 3,
+        "min_cluster_size": 3,
+        "percent_min_lines": 0.03,
+        "min_lines": 5,
+        "min_paths": 2,
+        "cam_num": "2",
+        "detections_num": "0",
+        "roi_num": "0",
+        "frames_num": "4",
+        "tracks_num": "7",
+        "deep_sort_n_frames": 547,
+        "avg_confidence_n_frames": 0.8673961415067306,
+        "avg_confidence_total_frames": 0.8638938959411533,
+        "cluster_data": [
+            {
+                "cluster_num": 0,
+                "counted_tracks": 603,
+                "n_tracks_in_n_frames": 243,
+                "avg_confidence_in_n_frames": 0.8727435041028507
+            },
+            {
+                "cluster_num": 1,
+                "counted_tracks": 772,
+                "n_tracks_in_n_frames": 308,
+                "avg_confidence_in_n_frames": 0.8629233718554398
+            }
+        ],
+        "tracks_time": 7.7563488483428955,
+        "plot_path": "/scratch/vasum/RUN_MAIN-76887/yolov4-deepsort/outputs/counts/cam_2/counts_cam_2_4_0_0_7_5.png"
+    },
+    {
+        "count_num": "5",
+        "angle_factor": 1,
+        "region_factor": 3,
+        "min_cluster_size": 3,
+        "percent_min_lines": 0.03,
+        "min_lines": 5,
+        "min_paths": 2,
+        "cam_num": "2",
+        "detections_num": "0",
+        "roi_num": "0",
+        "frames_num": "5",
+        "tracks_num": "7",
+        "deep_sort_n_frames": 675,
+        "avg_confidence_n_frames": 0.8648372933148847,
+        "avg_confidence_total_frames": 0.8659736607370278,
+        "cluster_data": [
+            {
+                "cluster_num": 0,
+                "counted_tracks": 600,
+                "n_tracks_in_n_frames": 300,
+                "avg_confidence_in_n_frames": 0.8754588376962725
+            },
+            {
+                "cluster_num": 1,
+                "counted_tracks": 772,
+                "n_tracks_in_n_frames": 381,
+                "avg_confidence_in_n_frames": 0.8564002523695211
+            }
+        ],
+        "tracks_time": 8.14202880859375,
+        "plot_path": "/scratch/vasum/RUN_MAIN-76887/yolov4-deepsort/outputs/counts/cam_2/counts_cam_2_5_0_0_7_5.png"
+    },
+    {
+        "count_num": "5",
+        "angle_factor": 1,
+        "region_factor": 3,
+        "min_cluster_size": 3,
+        "percent_min_lines": 0.03,
+        "min_lines": 5,
+        "min_paths": 2,
+        "cam_num": "2",
+        "detections_num": "0",
+        "roi_num": "0",
+        "frames_num": "6",
+        "tracks_num": "7",
+        "deep_sort_n_frames": 830,
+        "avg_confidence_n_frames": 0.8671709710829631,
+        "avg_confidence_total_frames": 0.8659736607370278,
+        "cluster_data": [
+            {
+                "cluster_num": 0,
+                "counted_tracks": 600,
+                "n_tracks_in_n_frames": 378,
+                "avg_confidence_in_n_frames": 0.8771302795873979
+            },
+            {
+                "cluster_num": 1,
+                "counted_tracks": 772,
+                "n_tracks_in_n_frames": 456,
+                "avg_confidence_in_n_frames": 0.8588332460577102
+            }
+        ],
+        "tracks_time": 8.778624296188354,
+        "plot_path": "/scratch/vasum/RUN_MAIN-76887/yolov4-deepsort/outputs/counts/cam_2/counts_cam_2_6_0_0_7_5.png"
+    },
+    {
+        "count_num": "5",
+        "angle_factor": 1,
+        "region_factor": 3,
+        "min_cluster_size": 3,
+        "percent_min_lines": 0.03,
+        "min_lines": 5,
+        "min_paths": 2,
+        "cam_num": "2",
+        "detections_num": "0",
+        "roi_num": "0",
+        "frames_num": "7",
+        "tracks_num": "7",
+        "deep_sort_n_frames": 968,
+        "avg_confidence_n_frames": 0.8679050410022876,
+        "avg_confidence_total_frames": 0.8652735594213765,
+        "cluster_data": [
+            {
+                "cluster_num": 0,
+                "counted_tracks": 600,
+                "n_tracks_in_n_frames": 431,
+                "avg_confidence_in_n_frames": 0.8762160150397351
+            },
+            {
+                "cluster_num": 1,
+                "counted_tracks": 772,
+                "n_tracks_in_n_frames": 541,
+                "avg_confidence_in_n_frames": 0.8612093846498722
+            }
+        ],
+        "tracks_time": 9.285745620727539,
+        "plot_path": "/scratch/vasum/RUN_MAIN-76887/yolov4-deepsort/outputs/counts/cam_2/counts_cam_2_7_0_0_7_5.png"
+    },
+    {
+        "count_num": "5",
+        "angle_factor": 1,
+        "region_factor": 3,
+        "min_cluster_size": 3,
+        "percent_min_lines": 0.03,
+        "min_lines": 5,
+        "min_paths": 2,
+        "cam_num": "2",
+        "detections_num": "0",
+        "roi_num": "0",
+        "frames_num": "8",
+        "tracks_num": "7",
+        "deep_sort_n_frames": 1107,
+        "avg_confidence_n_frames": 0.8662252377999003,
+        "avg_confidence_total_frames": 0.8647394269743592,
+        "cluster_data": [
+            {
+                "cluster_num": 0,
+                "counted_tracks": 600,
+                "n_tracks_in_n_frames": 487,
+                "avg_confidence_in_n_frames": 0.8742388767781291
+            },
+            {
+                "cluster_num": 1,
+                "counted_tracks": 778,
+                "n_tracks_in_n_frames": 621,
+                "avg_confidence_in_n_frames": 0.8599765992557344
+            }
+        ],
+        "tracks_time": 12.235632419586182,
+        "plot_path": "/scratch/vasum/RUN_MAIN-76887/yolov4-deepsort/outputs/counts/cam_2/counts_cam_2_8_0_0_7_5.png"
+    },
+    {
+        "count_num": "5",
+        "angle_factor": 1,
+        "region_factor": 3,
+        "min_cluster_size": 3,
+        "percent_min_lines": 0.03,
+        "min_lines": 5,
+        "min_paths": 2,
+        "cam_num": "2",
+        "detections_num": "0",
+        "roi_num": "0",
+        "frames_num": "9",
+        "tracks_num": "7",
+        "deep_sort_n_frames": 1262,
+        "avg_confidence_n_frames": 0.865715913799222,
+        "avg_confidence_total_frames": 0.8647394269743592,
+        "cluster_data": [
+            {
+                "cluster_num": 0,
+                "counted_tracks": 600,
+                "n_tracks_in_n_frames": 555,
+                "avg_confidence_in_n_frames": 0.8719380995666418
+            },
+            {
+                "cluster_num": 1,
+                "counted_tracks": 778,
+                "n_tracks_in_n_frames": 708,
+                "avg_confidence_in_n_frames": 0.8608704814115867
+            }
+        ],
+        "tracks_time": 10.732347965240479,
+        "plot_path": "/scratch/vasum/RUN_MAIN-76887/yolov4-deepsort/outputs/counts/cam_2/counts_cam_2_9_0_0_7_5.png"
+    },
+    {
+        "count_num": "5",
+        "angle_factor": 1,
+        "region_factor": 3,
+        "min_cluster_size": 3,
+        "percent_min_lines": 0.03,
+        "min_lines": 5,
+        "min_paths": 2,
+        "cam_num": "4",
+        "detections_num": "0",
+        "roi_num": "0",
+        "frames_num": "0",
+        "tracks_num": "7",
+        "deep_sort_n_frames": 1714,
+        "avg_confidence_n_frames": 0.8756674664291632,
+        "avg_confidence_total_frames": 0.8756674664291632,
+        "cluster_data": [
+            {
+                "cluster_num": 0,
+                "counted_tracks": 54,
+                "n_tracks_in_n_frames": 54,
+                "avg_confidence_in_n_frames": 0.8859015624303395
+            },
+            {
+                "cluster_num": 1,
+                "counted_tracks": 770,
+                "n_tracks_in_n_frames": 770,
+                "avg_confidence_in_n_frames": 0.8807024759476425
+            },
+            {
+                "cluster_num": 2,
+                "counted_tracks": 107,
+                "n_tracks_in_n_frames": 107,
+                "avg_confidence_in_n_frames": 0.8724969379649719
+            },
+            {
+                "cluster_num": 3,
+                "counted_tracks": 746,
+                "n_tracks_in_n_frames": 746,
+                "avg_confidence_in_n_frames": 0.8919268512696201
+            },
+            {
+                "cluster_num": 4,
+                "counted_tracks": 45,
+                "n_tracks_in_n_frames": 45,
+                "avg_confidence_in_n_frames": 0.8922103207787901
+            }
+        ],
+        "tracks_time": 25.43120837211609,
+        "plot_path": "/scratch/vasum/RUN_MAIN-76887/yolov4-deepsort/outputs/counts/cam_4/counts_cam_4_0_0_0_7_5.png"
+    },
+    {
+        "count_num": "5",
+        "angle_factor": 1,
+        "region_factor": 3,
+        "min_cluster_size": 3,
+        "percent_min_lines": 0.03,
+        "min_lines": 5,
+        "min_paths": 2,
+        "cam_num": "4",
+        "detections_num": "0",
+        "roi_num": "0",
+        "frames_num": "1",
+        "tracks_num": "7",
+        "deep_sort_n_frames": 166,
+        "avg_confidence_n_frames": 0.8700689835929764,
+        "avg_confidence_total_frames": 0.8562678223725105,
+        "cluster_data": [
+            {
+                "cluster_num": 0,
+                "counted_tracks": 1077,
+                "n_tracks_in_n_frames": 111,
+                "avg_confidence_in_n_frames": 0.8486598805897734
+            },
+            {
+                "cluster_num": 1,
+                "counted_tracks": 844,
+                "n_tracks_in_n_frames": 74,
+                "avg_confidence_in_n_frames": 0.8960881863862937
+            }
+        ],
+        "tracks_time": 9.53245234489441,
+        "plot_path": "/scratch/vasum/RUN_MAIN-76887/yolov4-deepsort/outputs/counts/cam_4/counts_cam_4_1_0_0_7_5.png"
+    },
+    {
+        "count_num": "5",
+        "angle_factor": 1,
+        "region_factor": 3,
+        "min_cluster_size": 3,
+        "percent_min_lines": 0.03,
+        "min_lines": 5,
+        "min_paths": 2,
+        "cam_num": "4",
+        "detections_num": "0",
+        "roi_num": "0",
+        "frames_num": "2",
+        "tracks_num": "7",
+        "deep_sort_n_frames": 326,
+        "avg_confidence_n_frames": 0.8627680705916574,
+        "avg_confidence_total_frames": 0.8448433697637207,
+        "cluster_data": [
+            {
+                "cluster_num": 0,
+                "counted_tracks": 975,
+                "n_tracks_in_n_frames": 156,
+                "avg_confidence_in_n_frames": 0.8452559317964208
+            },
+            {
+                "cluster_num": 1,
+                "counted_tracks": 762,
+                "n_tracks_in_n_frames": 145,
+                "avg_confidence_in_n_frames": 0.893141889506256
+            },
+            {
+                "cluster_num": 2,
+                "counted_tracks": 187,
+                "n_tracks_in_n_frames": 31,
+                "avg_confidence_in_n_frames": 0.8507932109022146
+            },
+            {
+                "cluster_num": 3,
+                "counted_tracks": 48,
+                "n_tracks_in_n_frames": 10,
+                "avg_confidence_in_n_frames": 0.8578483358518909
+            }
+        ],
+        "tracks_time": 12.188501358032227,
+        "plot_path": "/scratch/vasum/RUN_MAIN-76887/yolov4-deepsort/outputs/counts/cam_4/counts_cam_4_2_0_0_7_5.png"
+    },
+    {
+        "count_num": "5",
+        "angle_factor": 1,
+        "region_factor": 3,
+        "min_cluster_size": 3,
+        "percent_min_lines": 0.03,
+        "min_lines": 5,
+        "min_paths": 2,
+        "cam_num": "4",
+        "detections_num": "0",
+        "roi_num": "0",
+        "frames_num": "3",
+        "tracks_num": "7",
+        "deep_sort_n_frames": 568,
+        "avg_confidence_n_frames": 0.8580892424566733,
+        "avg_confidence_total_frames": 0.8432715847741342,
+        "cluster_data": [
+            {
+                "cluster_num": 0,
+                "counted_tracks": 325,
+                "n_tracks_in_n_frames": 92,
+                "avg_confidence_in_n_frames": 0.8370748174314168
+            },
+            {
+                "cluster_num": 1,
+                "counted_tracks": 566,
+                "n_tracks_in_n_frames": 162,
+                "avg_confidence_in_n_frames": 0.91250122007405
+            },
+            {
+                "cluster_num": 2,
+                "counted_tracks": 969,
+                "n_tracks_in_n_frames": 297,
+                "avg_confidence_in_n_frames": 0.8421939521313789
+            },
+            {
+                "cluster_num": 3,
+                "counted_tracks": 169,
+                "n_tracks_in_n_frames": 39,
+                "avg_confidence_in_n_frames": 0.8512243486341939
+            }
+        ],
+        "tracks_time": 14.656351566314697,
+        "plot_path": "/scratch/vasum/RUN_MAIN-76887/yolov4-deepsort/outputs/counts/cam_4/counts_cam_4_3_0_0_7_5.png"
+    },
+    {
+        "count_num": "5",
+        "angle_factor": 1,
+        "region_factor": 3,
+        "min_cluster_size": 3,
+        "percent_min_lines": 0.03,
+        "min_lines": 5,
+        "min_paths": 2,
+        "cam_num": "4",
+        "detections_num": "0",
+        "roi_num": "0",
+        "frames_num": "4",
+        "tracks_num": "7",
+        "deep_sort_n_frames": 704,
+        "avg_confidence_n_frames": 0.8656011753850212,
+        "avg_confidence_total_frames": 0.8497883991732451,
+        "cluster_data": [
+            {
+                "cluster_num": 0,
+                "counted_tracks": 910,
+                "n_tracks_in_n_frames": 369,
+                "avg_confidence_in_n_frames": 0.8537406010033636
+            },
+            {
+                "cluster_num": 1,
+                "counted_tracks": 374,
+                "n_tracks_in_n_frames": 128,
+                "avg_confidence_in_n_frames": 0.9180549677267908
+            },
+            {
+                "cluster_num": 2,
+                "counted_tracks": 403,
+                "n_tracks_in_n_frames": 149,
+                "avg_confidence_in_n_frames": 0.8835587777051639
+            },
+            {
+                "cluster_num": 3,
+                "counted_tracks": 135,
+                "n_tracks_in_n_frames": 48,
+                "avg_confidence_in_n_frames": 0.8810606494407597
+            },
+            {
+                "cluster_num": 4,
+                "counted_tracks": 65,
+                "n_tracks_in_n_frames": 31,
+                "avg_confidence_in_n_frames": 0.8731559830750675
+            }
+        ],
+        "tracks_time": 13.349530935287476,
+        "plot_path": "/scratch/vasum/RUN_MAIN-76887/yolov4-deepsort/outputs/counts/cam_4/counts_cam_4_4_0_0_7_5.png"
+    },
+    {
+        "count_num": "5",
+        "angle_factor": 1,
+        "region_factor": 3,
+        "min_cluster_size": 3,
+        "percent_min_lines": 0.03,
+        "min_lines": 5,
+        "min_paths": 2,
+        "cam_num": "4",
+        "detections_num": "0",
+        "roi_num": "0",
+        "frames_num": "5",
+        "tracks_num": "7",
+        "deep_sort_n_frames": 867,
+        "avg_confidence_n_frames": 0.8928477090574997,
+        "avg_confidence_total_frames": 0.8829043489282778,
+        "cluster_data": [
+            {
+                "cluster_num": 0,
+                "counted_tracks": 648,
+                "n_tracks_in_n_frames": 331,
+                "avg_confidence_in_n_frames": 0.9179935085658308
+            },
+            {
+                "cluster_num": 1,
+                "counted_tracks": 817,
+                "n_tracks_in_n_frames": 415,
+                "avg_confidence_in_n_frames": 0.8822005652163278
+            },
+            {
+                "cluster_num": 2,
+                "counted_tracks": 64,
+                "n_tracks_in_n_frames": 39,
+                "avg_confidence_in_n_frames": 0.8842477945727274
+            },
+            {
+                "cluster_num": 3,
+                "counted_tracks": 104,
+                "n_tracks_in_n_frames": 47,
+                "avg_confidence_in_n_frames": 0.8843641124391095
+            },
+            {
+                "cluster_num": 4,
+                "counted_tracks": 108,
+                "n_tracks_in_n_frames": 45,
+                "avg_confidence_in_n_frames": 0.8334801143620242
+            }
+        ],
+        "tracks_time": 13.496141910552979,
+        "plot_path": "/scratch/vasum/RUN_MAIN-76887/yolov4-deepsort/outputs/counts/cam_4/counts_cam_4_5_0_0_7_5.png"
+    },
+    {
+        "count_num": "5",
+        "angle_factor": 1,
+        "region_factor": 3,
+        "min_cluster_size": 3,
+        "percent_min_lines": 0.03,
+        "min_lines": 5,
+        "min_paths": 2,
+        "cam_num": "4",
+        "detections_num": "0",
+        "roi_num": "0",
+        "frames_num": "6",
+        "tracks_num": "7",
+        "deep_sort_n_frames": 976,
+        "avg_confidence_n_frames": 0.8916908933572683,
+        "avg_confidence_total_frames": 0.8815218442492487,
+        "cluster_data": [
+            {
+                "cluster_num": 0,
+                "counted_tracks": 810,
+                "n_tracks_in_n_frames": 513,
+                "avg_confidence_in_n_frames": 0.8861007369100833
+            },
+            {
+                "cluster_num": 1,
+                "counted_tracks": 600,
+                "n_tracks_in_n_frames": 347,
+                "avg_confidence_in_n_frames": 0.9175482300353947
+            },
+            {
+                "cluster_num": 2,
+                "counted_tracks": 89,
+                "n_tracks_in_n_frames": 49,
+                "avg_confidence_in_n_frames": 0.8983282887502616
+            },
+            {
+                "cluster_num": 3,
+                "counted_tracks": 172,
+                "n_tracks_in_n_frames": 89,
+                "avg_confidence_in_n_frames": 0.8505130830053659
+            },
+            {
+                "cluster_num": 4,
+                "counted_tracks": 64,
+                "n_tracks_in_n_frames": 44,
+                "avg_confidence_in_n_frames": 0.8799811178119036
+            }
+        ],
+        "tracks_time": 14.780383348464966,
+        "plot_path": "/scratch/vasum/RUN_MAIN-76887/yolov4-deepsort/outputs/counts/cam_4/counts_cam_4_6_0_0_7_5.png"
+    },
+    {
+        "count_num": "5",
+        "angle_factor": 1,
+        "region_factor": 3,
+        "min_cluster_size": 3,
+        "percent_min_lines": 0.03,
+        "min_lines": 5,
+        "min_paths": 2,
+        "cam_num": "4",
+        "detections_num": "0",
+        "roi_num": "0",
+        "frames_num": "7",
+        "tracks_num": "7",
+        "deep_sort_n_frames": 1147,
+        "avg_confidence_n_frames": 0.8888881578242201,
+        "avg_confidence_total_frames": 0.8826593644717574,
+        "cluster_data": [
+            {
+                "cluster_num": 0,
+                "counted_tracks": 810,
+                "n_tracks_in_n_frames": 568,
+                "avg_confidence_in_n_frames": 0.8845136496511081
+            },
+            {
+                "cluster_num": 1,
+                "counted_tracks": 609,
+                "n_tracks_in_n_frames": 418,
+                "avg_confidence_in_n_frames": 0.9119128424431544
+            },
+            {
+                "cluster_num": 2,
+                "counted_tracks": 104,
+                "n_tracks_in_n_frames": 64,
+                "avg_confidence_in_n_frames": 0.883617388923081
+            },
+            {
+                "cluster_num": 3,
+                "counted_tracks": 63,
+                "n_tracks_in_n_frames": 54,
+                "avg_confidence_in_n_frames": 0.8775243270777741
+            },
+            {
+                "cluster_num": 4,
+                "counted_tracks": 149,
+                "n_tracks_in_n_frames": 94,
+                "avg_confidence_in_n_frames": 0.8456713753176939
+            }
+        ],
+        "tracks_time": 16.20349955558777,
+        "plot_path": "/scratch/vasum/RUN_MAIN-76887/yolov4-deepsort/outputs/counts/cam_4/counts_cam_4_7_0_0_7_5.png"
+    },
+    {
+        "count_num": "5",
+        "angle_factor": 1,
+        "region_factor": 3,
+        "min_cluster_size": 3,
+        "percent_min_lines": 0.03,
+        "min_lines": 5,
+        "min_paths": 2,
+        "cam_num": "4",
+        "detections_num": "0",
+        "roi_num": "0",
+        "frames_num": "8",
+        "tracks_num": "7",
+        "deep_sort_n_frames": 1388,
+        "avg_confidence_n_frames": 0.8776930732542251,
+        "avg_confidence_total_frames": 0.8739018917802873,
+        "cluster_data": [
+            {
+                "cluster_num": 0,
+                "counted_tracks": 108,
+                "n_tracks_in_n_frames": 84,
+                "avg_confidence_in_n_frames": 0.8735320902871645
+            },
+            {
+                "cluster_num": 1,
+                "counted_tracks": 781,
+                "n_tracks_in_n_frames": 639,
+                "avg_confidence_in_n_frames": 0.8812073947261583
+            },
+            {
+                "cluster_num": 2,
+                "counted_tracks": 45,
+                "n_tracks_in_n_frames": 42,
+                "avg_confidence_in_n_frames": 0.8893532643391312
+            },
+            {
+                "cluster_num": 3,
+                "counted_tracks": 53,
+                "n_tracks_in_n_frames": 43,
+                "avg_confidence_in_n_frames": 0.8896962197603362
+            },
+            {
+                "cluster_num": 4,
+                "counted_tracks": 746,
+                "n_tracks_in_n_frames": 589,
+                "avg_confidence_in_n_frames": 0.9005483936498349
+            }
+        ],
+        "tracks_time": 16.786017656326294,
+        "plot_path": "/scratch/vasum/RUN_MAIN-76887/yolov4-deepsort/outputs/counts/cam_4/counts_cam_4_8_0_0_7_5.png"
+    },
+    {
+        "count_num": "5",
+        "angle_factor": 1,
+        "region_factor": 3,
+        "min_cluster_size": 3,
+        "percent_min_lines": 0.03,
+        "min_lines": 5,
+        "min_paths": 2,
+        "cam_num": "4",
+        "detections_num": "0",
+        "roi_num": "0",
+        "frames_num": "9",
+        "tracks_num": "7",
+        "deep_sort_n_frames": 1520,
+        "avg_confidence_n_frames": 0.8775592152621591,
+        "avg_confidence_total_frames": 0.8752190114699093,
+        "cluster_data": [
+            {
+                "cluster_num": 0,
+                "counted_tracks": 57,
+                "n_tracks_in_n_frames": 55,
+                "avg_confidence_in_n_frames": 0.8816133363846382
+            },
+            {
+                "cluster_num": 1,
+                "counted_tracks": 770,
+                "n_tracks_in_n_frames": 706,
+                "avg_confidence_in_n_frames": 0.8827922916916627
+            },
+            {
+                "cluster_num": 2,
+                "counted_tracks": 107,
+                "n_tracks_in_n_frames": 97,
+                "avg_confidence_in_n_frames": 0.8683909122229695
+            },
+            {
+                "cluster_num": 3,
+                "counted_tracks": 743,
+                "n_tracks_in_n_frames": 647,
+                "avg_confidence_in_n_frames": 0.8938609940669486
+            },
+            {
+                "cluster_num": 4,
+                "counted_tracks": 45,
+                "n_tracks_in_n_frames": 44,
+                "avg_confidence_in_n_frames": 0.891760601389242
+            }
+        ],
+        "tracks_time": 17.81482696533203,
+        "plot_path": "/scratch/vasum/RUN_MAIN-76887/yolov4-deepsort/outputs/counts/cam_4/counts_cam_4_9_0_0_7_5.png"
+    }
 ]
