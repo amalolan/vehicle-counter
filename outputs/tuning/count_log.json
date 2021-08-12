@@ -1909,5 +1909,25 @@
         ],
         "tracks_time": 6.221225261688232,
         "plot_path": "/scratch/vasum/RUN_MAIN-76891/yolov4-deepsort/outputs/counts/cam_8/counts_cam_8_0_0_0_7_5.png"
+    },
+    {
+        "count_num": "5",
+        "angle_factor": 1,
+        "region_factor": 3,
+        "min_cluster_size": 3,
+        "percent_min_lines": 0.03,
+        "min_lines": 5,
+        "min_paths": 2,
+        "cam_num": "8",
+        "detections_num": "0",
+        "roi_num": "0",
+        "frames_num": "1",
+        "tracks_num": "7",
+        "deep_sort_n_frames": 0,
+        "avg_confidence_n_frames": 0.8520747418625902,
+        "avg_confidence_total_frames": 0.8852349228043518,
+        "cluster_data": [],
+        "tracks_time": 1.153343915939331,
+        "plot_path": "/Users/malolan/Documents/Research/Traffic/final/yolov4-deepsort/outputs/counts/cam_8/counts_cam_8_1_0_0_7_5.png"
     }
 ]

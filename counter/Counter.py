@@ -54,6 +54,8 @@ class Counter:
                 min_n=None, max_n=None, fixed_n=None, plot_path=None, debug=False):
         height, width, _ = self.tracks.image.shape
         self.tracks.remove_small_paths()
+        if len(self.tracks.tracks_list) == 0:
+            return 0
         X = self.tracks.normalize()
         max_silhouette, best_n = 0, None
         if fixed_n is None:

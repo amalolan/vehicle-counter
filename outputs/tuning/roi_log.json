@@ -502,5 +502,17 @@
         "grid_size": 77,
         "detection_time": 2.3950302600860596,
         "hull_file": "/scratch/vasum/RUN_MAIN-76891/yolov4-deepsort/outputs/hull/hull_cam_8_1_0_0.txt"
+    },
+    {
+        "roi_num": "0",
+        "dfs_confidence": 0.75,
+        "outlier_threshold": 0.25,
+        "cam_num": "8",
+        "detections_num": "0",
+        "frames_num": "2",
+        "total_frames": 3000,
+        "grid_size": 98,
+        "detection_time": 1.165360927581787,
+        "hull_file": "/Users/malolan/Documents/Research/Traffic/final/yolov4-deepsort/outputs/hull/hull_cam_8_2_0_0.txt"
     }
 ]
